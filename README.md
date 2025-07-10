@@ -107,4 +107,10 @@ See [docs/eslint-integration.md](docs/eslint-integration.md) for full details on
 
 ---
 
+## Prettier Integration
+
+See [docs/prettier-integration.md](docs/prettier-integration.md) for full details on Prettier setup, editor support, and integration with ESLint and Tailwind CSS.
+
+---
+
 Built with ❤️ by contributors.

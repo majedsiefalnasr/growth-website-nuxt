@@ -1,0 +1,31 @@
+# Ignore formatting for build and dependency files
+node_modules
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+*.log
+logs
+.DS_Store
+.fleet
+.idea
+.env
+.env.*
+!.env.example
+
+# Ignore generated files
+coverage
+
+# Ignore all JS/TS build outputs
+*.js
+*.jsx
+*.ts
+*.tsx
+
+# Ignore Prettier config
+.prettierrc
+
+# Ignore Prettier ignore file
+.prettierignore
