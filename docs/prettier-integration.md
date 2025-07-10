@@ -27,3 +27,15 @@ Add this to your `.vscode/settings.json` for Prettier and ESLint autofix on save
   "eslint.validate": ["javascript", "typescript", "vue"]
 }
 ```
+
+## Additional Prettier Plugins
+
+See [docs/prettier-plugins-integration.md](docs/prettier-plugins-integration.md) for details on the additional Prettier plugins used in this project, including:
+
+- prettier-plugin-css-order
+- prettier-plugin-import-sort
+- prettier-plugin-jsdoc
+- prettier-plugin-organize-attributes
+- prettier-plugin-organize-imports
+
+These plugins are configured in `.prettierrc` and installed as dev dependencies. They help enforce consistent code style, import order, and documentation formatting across the codebase.

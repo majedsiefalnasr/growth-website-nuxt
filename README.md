@@ -131,4 +131,10 @@ See [docs/husky-integration.md](docs/husky-integration.md) for setup, configurat
 
 ---
 
+## Integrations & Tooling
+
+- **TypeScript for Vue (`vue-tsc`)**: Type checking and import organization for `.vue` files. See [docs/vue-tsc-integration.md](docs/vue-tsc-integration.md).
+
+---
+
 Built with ❤️ by contributors.

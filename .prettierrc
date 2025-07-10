@@ -4,11 +4,18 @@
   "tabWidth": 2,
   "trailingComma": "es5",
   "tailwindPreserveWhitespace": true,
-  "plugins": ["prettier-plugin-tailwindcss"],
   "printWidth": 100,
   "arrowParens": "always",
   "endOfLine": "lf",
   "bracketSpacing": true,
   "jsxSingleQuote": true,
-  "proseWrap": "preserve"
+  "proseWrap": "preserve",
+  "plugins": [
+    "prettier-plugin-css-order",
+    "prettier-plugin-jsdoc",
+    "prettier-plugin-organize-attributes",
+    "prettier-plugin-organize-imports",
+    "prettier-plugin-tailwindcss" 
+  ],
+  "attributeGroups": ["^class$", "^(id|name)$", "$DEFAULT", "^aria-"]
 }
