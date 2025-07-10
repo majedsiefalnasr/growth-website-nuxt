@@ -1,0 +1,19 @@
+{
+  // Recommended VS Code extensions for Growth (Nuxt 4) project
+  "recommendations": [
+    // Vetur: Vue tooling for syntax highlighting, snippets, and more
+    "vue.volar",
+    // Prettier: Code formatter
+    "esbenp.prettier-vscode",
+    // ESLint: Linting for JS/TS and Vue files
+    "dbaeumer.vscode-eslint",
+    // Tailwind CSS IntelliSense: Autocomplete and linting for Tailwind CSS
+    "bradlc.vscode-tailwindcss",
+    // NPM: Manage npm/yarn/pnpm dependencies
+    "idered.npm",
+    // Icônes Icon Explorer with Instant searching, powered by Iconify
+    "afzalsayed96.icones",
+    // Iconify: Icon library for Vue and other frameworks
+    "antfu.iconify",
+  ]
+}
