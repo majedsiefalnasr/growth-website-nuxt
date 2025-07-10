@@ -1,0 +1,60 @@
+{
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always",
+    "source.fixAll.eslint": "always",
+    "source.organizeImports": "explicit",
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.nuxt": true,
+    "**/.output": true,
+    "**/.env*": true,
+    "**/.cache": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.nuxt": true,
+    "**/.output": true,
+    "**/.cache": true
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "vue"
+  ],
+  "eslint.options": {
+    "extensions": [
+      ".js",
+      ".ts",
+      ".vue"
+    ]
+  },
+  "prettier.requireConfig": true,
+  "prettier.useEditorConfig": true,
+  "tailwindCSS.includeLanguages": {
+    "vue": "html"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    "tw`([^`]*)",
+    "tw\\(\\s*['\"]([^'\"]*)['\"]\\s*\\)",
+    "class: '([^']*)'",
+    "class: \"([^\"]*)\""
+  ],
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "git.ignoreLimitWarning": true,
+  "vue.inlayHints.inlineHandlerLeading": true
+}
