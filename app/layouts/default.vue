@@ -13,5 +13,5 @@
 </template>
 
 <script setup lang="ts">
-  // Reason: Default layout for all pages in Nuxt 4 app structure.
+// Reason: Default layout for all pages in Nuxt 4 app structure.
 </script>
