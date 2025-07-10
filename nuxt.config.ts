@@ -1,3 +1,5 @@
+import tailwindcss from "@tailwindcss/vite";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   future: {
@@ -5,11 +7,16 @@ export default defineNuxtConfig({
   },
   devtools: {enabled: true},
   modules: [
-    '@nuxtjs/tailwindcss',
     '@nuxt/eslint',
     '@nuxtjs/seo',
     // ...other modules
   ],
+  css: ['~/assets/css/app.css'],
+  vite: {
+    plugins: [
+      tailwindcss(),
+    ],
+  },
   // Nuxt SEO: site-wide metadata configuration
   site: {
     url: 'https://growth.example.com', // Update with your production domain
@@ -113,14 +120,6 @@ export default defineNuxtConfig({
   },
   linkChecker: {
     // enabled: false,
-  },
-  // TailwindCSS configuration
-  tailwindcss: {
-    cssPath: ['~/assets/css/tailwind.css', {injectPosition: 'first'}],
-    config: {},
-    viewer: {endpoint: '/_tailwind', exportViewer: true},
-    exposeConfig: true,
-    editorSupport: true,
   },
   // ESLint configuration
   eslint: {

@@ -1,14 +1,9 @@
 /**
- * Tailwind CSS Configuration for Nuxt 4
+ * Tailwind CSS v4 Configuration for Nuxt 4
  *
- * This config is referenced in nuxt.config.ts via the @nuxtjs/tailwindcss module options.
- *
- * For full options, see: https://tailwindcss.nuxtjs.org/options
+ * For full options, see: https://tailwindcss.com/docs/configuration
  */
-module.exports = {
-  theme: {
-    extend: {},
-  },
+export default {
   content: [
     './app/components/**/*.{vue,js,ts}',
     './app/layouts/**/*.{vue,js,ts}',
@@ -17,5 +12,8 @@ module.exports = {
     './app/utils/**/*.{js,ts}',
     './app/app.vue',
   ],
+  theme: {
+    extend: {},
+  },
   plugins: [],
 }
