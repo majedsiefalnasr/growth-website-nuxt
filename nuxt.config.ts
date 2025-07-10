@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   devtools: {enabled: true},
   modules: [
     '@nuxtjs/tailwindcss',
+    '@nuxt/eslint',
     // ...other modules
   ],
   // TailwindCSS configuration
@@ -15,6 +16,10 @@ export default defineNuxtConfig({
     viewer: {endpoint: '/_tailwind', exportViewer: true},
     exposeConfig: true,
     editorSupport: true,
+  },
+  // ESLint configuration
+  eslint: {
+    // options here
   },
   // You can add more Nuxt 4 options here as needed
 })
