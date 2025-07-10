@@ -92,7 +92,8 @@
 ### ⬆️ Dependency Updates
 
 - **Review and test all dependency updates** before merging.
-- **Document any new or removed dependencies in `README.md` and `requirements.txt`**.
+- **Document any new or removed dependencies in `README.md` and the appropriate manifest file** (e.g., `package.json`, `requirements.txt`, or equivalent).
+- **If a dependency relates to a specific tool or integration, update or reference the relevant documentation file in `docs/` (e.g., `docs/tailwind-css-integration.md`, `docs/eslint-integration.md`) as needed.**
 - **Check for security advisories** when updating dependencies.
 
 ### 📁 Handling Large Files
