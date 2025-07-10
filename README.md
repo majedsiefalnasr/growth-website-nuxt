@@ -119,4 +119,16 @@ See [docs/nuxtjs-seo-integration.md](docs/nuxtjs-seo-integration.md) for full de
 
 ---
 
+## lint-staged Integration
+
+See [docs/lint-staged-integration.md](docs/lint-staged-integration.md) for setup, configuration, and usage details for lint-staged.
+
+---
+
+## Husky Integration
+
+See [docs/husky-integration.md](docs/husky-integration.md) for setup, configuration, and usage details for Husky and Git hooks.
+
+---
+
 Built with ❤️ by contributors.
