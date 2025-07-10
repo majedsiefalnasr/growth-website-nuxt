@@ -113,4 +113,10 @@ See [docs/prettier-integration.md](docs/prettier-integration.md) for full detail
 
 ---
 
+## Nuxt SEO Integration
+
+See [docs/nuxtjs-seo-integration.md](docs/nuxtjs-seo-integration.md) for full details on @nuxtjs/seo setup, configuration, and best practices for SEO in this project.
+
+---
+
 Built with ❤️ by contributors.
