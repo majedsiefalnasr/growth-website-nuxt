@@ -8,7 +8,7 @@ Growth is a web-based platform designed to empower individuals and small busines
 
 This project now uses [Nuxt 4](https://nuxt.com/) with the following structure:
 
-```
+```plaintext
 app/
   assets/
   components/
@@ -39,13 +39,17 @@ tsconfig.json
 ## Getting Started
 
 1. Install dependencies:
+
    ```sh
    pnpm install
    ```
+
 2. Start the development server:
+
    ```sh
    pnpm dev
    ```
+
 3. Visit [http://localhost:3000](http://localhost:3000) in your browser.
 
 For more, see the [Nuxt 4 documentation](https://nuxt.com/docs/getting-started/introduction).
