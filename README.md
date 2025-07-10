@@ -56,4 +56,43 @@ For more, see the [Nuxt 4 documentation](https://nuxt.com/docs/getting-started/i
 
 ---
 
+## Copilot Coding & Contribution Guidelines
+
+This project follows strict coding, testing, and documentation guidelines as described in `.github/copilot-instructions.md`.
+
+## Secret Management
+
+- Store secrets in environment variables or secure vaults.
+- Never commit secrets to version control.
+- `.env` and similar files are in `.gitignore`.
+
+## Testing
+
+- All tests live in `/tests`, mirroring the main app structure.
+- Each test file should include: 1 expected use, 1 edge case, 1 failure case.
+
+## Large Files
+
+- Do not commit files >100MB.
+- Use Git LFS or external storage for large assets.
+- Large file patterns are in `.gitignore`.
+
+## Issue & PR Templates
+
+- Use the provided templates in `.github/ISSUE_TEMPLATE/` and `.github/pull_request_template/`.
+
+## Dependency Management
+
+- Review and document all dependency changes in `README.md` and `package.json`.
+- Check for security advisories when updating dependencies.
+
+## Accessibility
+
+- Ensure all user-facing features are accessible (semantic HTML, ARIA, color contrast).
+- Test UI with screen readers and keyboard navigation.
+
+For full details, see `.github/copilot-instructions.md`.
+
+---
+
 Built with ❤️ by contributors.
