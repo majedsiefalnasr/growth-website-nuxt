@@ -25,9 +25,10 @@ For best experience, install the ESLint extension in VS Code. Add this to your `
 ```json
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "eslint.validate": ["javascript", "typescript", "vue"]
+    "source.fixAll": "never",
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  }
 }
 ```
 

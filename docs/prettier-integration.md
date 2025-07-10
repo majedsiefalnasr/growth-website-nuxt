@@ -22,7 +22,7 @@ Add this to your `.vscode/settings.json` for Prettier and ESLint autofix on save
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "always"
   },
   "eslint.validate": ["javascript", "typescript", "vue"]
 }
