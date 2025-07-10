@@ -25,6 +25,7 @@
 ### 📎 Style & Conventions
 
 - Write **docstrings for every function** using the Google style.
+- For JavaScript/TypeScript code, **add JSDoc comments for every function, class, and exported symbol**.
 
 ### 📚 Documentation & Explainability
 
