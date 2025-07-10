@@ -18,12 +18,6 @@ logs
 # Ignore generated files
 coverage
 
-# Ignore all JS/TS build outputs
-*.js
-*.jsx
-*.ts
-*.tsx
-
 # Ignore Prettier config
 .prettierrc
 
