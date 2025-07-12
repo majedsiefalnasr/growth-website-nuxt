@@ -47,13 +47,21 @@
     "tw`([^`]*)",
     "tw\\(\\s*['\"]([^'\"]*)['\"]\\s*\\)",
     "class: '([^']*)'",
-    "class: \"([^\"]*)\""
+    "class: \"([^\"]*)\"",
+    [
+      "ui:\\s*{([^)]*)\\s*}",
+      "(?:'|\"|`)([^']*)(?:'|\"|`)"
+    ]
+  ],
+  "tailwindCSS.classAttributes": [
+    "class",
+    "ui"
   ],
   "files.associations": {
     "*.css": "tailwindcss"
   },
   "editor.quickSuggestions": {
-    "strings": true
+    "strings": "on"
   },
   "git.ignoreLimitWarning": true,
   "vue.inlayHints.inlineHandlerLeading": true
