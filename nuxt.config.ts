@@ -175,7 +175,7 @@ export default defineNuxtConfig({
     url: SITE_URL,
     name: SITE_NAME,
     description: SITE_DESCRIPTION,
-    defaultLocale: 'en',
+    defaultLocale: 'ar',
     image: SITE_IMAGE,
     author: SITE_AUTHOR,
     social: {
@@ -197,7 +197,7 @@ export default defineNuxtConfig({
     twitterSite: SITE_TWITTER_HANDLE, // Twitter handle
     canonical: SITE_URL,
     themeColor: '#0ea5e9',
-    language: 'en',
+    language: 'ar',
     image: SITE_IMAGE,
     author: SITE_AUTHOR.name,
     keywords: ['growth', 'business', 'platform', 'academy', 'blog', 'contact', 'pricing'],
@@ -242,7 +242,7 @@ export default defineNuxtConfig({
   schemaOrg: {
     enabled: true,
     canonicalHost: SITE_URL,
-    defaultLanguage: 'en',
+    defaultLanguage: 'ar',
     identity: {
       name: SITE_NAME,
       logo: '/favicon.ico',
@@ -260,7 +260,7 @@ export default defineNuxtConfig({
       name: SITE_NAME,
       url: SITE_URL,
       description: SITE_DESCRIPTION,
-      inLanguage: 'en',
+      inLanguage: 'ar',
     },
     // Add more schema.org options as needed
   },
@@ -280,7 +280,7 @@ export default defineNuxtConfig({
     bundle: {
       optimizeTranslationDirective: false,
     },
-    defaultLocale: 'en',
+    defaultLocale: 'ar',
     locales: [
       {
         code: 'en',
@@ -299,14 +299,14 @@ export default defineNuxtConfig({
         dir: 'rtl',
       },
     ],
-    strategy: 'prefix_except_default',
-    langDir: 'locales',
     lazy: true,
+    langDir: 'locales',
+    strategy: 'prefix_except_default',
     vueI18n: 'i18n.config.ts',
     detectBrowserLanguage: {
-      useCookie: false,
-      redirectOn: 'root',
-      fallbackLocale: 'en',
+      useCookie: true,
+      redirectOn: 'root', // or 'always' to always redirect
+      fallbackLocale: 'ar',
     },
   },
 

@@ -9,5 +9,6 @@
       This is your new Nuxt 4 home page. Start building your app in
       <code>app/pages/index.vue</code>.
     </p>
+    <ColorModeSwitcher />
   </div>
 </template>

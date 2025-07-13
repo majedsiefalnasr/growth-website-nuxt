@@ -22,12 +22,12 @@ modules: [
 The i18n configuration is defined in `nuxt.config.ts` under the `i18n` key. Key options:
 
 - **Locales**: English (`en`) and Arabic (`ar`) are supported, with language files in `i18n/locales/`.
-- **Default Locale**: English (`en`).
+- **Default Locale**: Arabic (`ar`).
 - **Strategy**: `prefix_except_default` (default locale has no prefix, others do).
 - **Language Directory**: `langDir: 'locales'` (relative to the `i18n/` folder).
 - **Lazy Loading**: Language files are loaded on demand.
 - **Vue I18n Config**: Uses `i18n/i18n.config.ts` for advanced options.
-- **Browser Language Detection**: Disabled cookie usage, redirects on root, fallback to English.
+- **Browser Language Detection**: Disabled cookie usage, redirects on root, fallback to Arabic.
 
 Example snippet from `nuxt.config.ts`:
 
@@ -36,7 +36,7 @@ i18n: {
   bundle: {
     optimizeTranslationDirective: false,
   },
-  defaultLocale: 'en',
+  defaultLocale: 'ar',
   locales: [
     {
       code: 'en',
@@ -62,7 +62,7 @@ i18n: {
   detectBrowserLanguage: {
     useCookie: false,
     redirectOn: 'root',
-    fallbackLocale: 'en',
+    fallbackLocale: 'ar',
   },
 },
 ```
