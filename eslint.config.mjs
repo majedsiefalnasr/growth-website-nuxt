@@ -78,6 +78,12 @@ export default withNuxt([
       'vue/attribute-hyphenation': ['error', 'always'],
       'vue/html-indent': ['error', 2],
       'vue/script-indent': ['error', 2, { baseIndent: 1 }],
+      'vue/block-order': [
+        'error',
+        {
+          order: ['script', 'template', 'style'],
+        },
+      ],
     },
   },
   eslintConfigPrettier,
