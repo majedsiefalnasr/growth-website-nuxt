@@ -1,6 +1,4 @@
 /* global defineNuxtConfig */
-import tailwindcss from '@tailwindcss/vite'
-
 /**
  * Nuxt configuration for Growth platform
  *
@@ -48,6 +46,13 @@ export default defineNuxtConfig({
     },
   },
 
+  /**
+   * Nuxt compatibility date for future-proof builds
+   *
+   * @see https://nuxt.com/docs/guide/going-further/compatibility-date
+   */
+  compatibilityDate: '2025-07-13',
+
   // === Nuxt 4 configuration options ===
   future: {
     compatibilityVersion: 4,
@@ -68,11 +73,6 @@ export default defineNuxtConfig({
 
   // === Nuxt UI configuration ===
   css: ['~/assets/css/app.css', '~/assets/css/fonts.css'],
-
-  // === Vite configuration ===
-  vite: {
-    plugins: [tailwindcss()],
-  },
 
   // === Router configuration ===
   router: {
