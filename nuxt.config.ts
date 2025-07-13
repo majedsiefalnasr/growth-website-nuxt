@@ -108,6 +108,17 @@ export default defineNuxtConfig({
     // Add more options as needed
   },
 
+  /**
+   * Color mode configuration
+   *
+   * @see https://github.com/nuxt-modules/color-mode
+   */
+  colorMode: {
+    preference: 'light', // Set light as the default color mode
+    fallback: 'light',
+    classSuffix: '',
+  },
+
   // === App-level HTML head configuration ===
   app: {
     head: {
