@@ -4,6 +4,7 @@
   "type": "module",
   "packageManager": "pnpm@10.12.2",
   "scripts": {
+    "analyze": "nuxi analyze",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
@@ -12,7 +13,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
-    "prepare": "husky install"
+    "prepare": "husky && husky install",
+    "test:images": "bash scripts/check_image_sizes.sh"
   },
   "dependencies": {
     "@nuxt/eslint": "1.5.2",
