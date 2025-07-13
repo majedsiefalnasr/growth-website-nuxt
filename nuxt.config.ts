@@ -74,6 +74,9 @@ export default defineNuxtConfig({
   // === Nuxt UI configuration ===
   css: ['~/assets/css/app.css', '~/assets/css/fonts.css'],
 
+  // === Plugins ===
+  plugins: [{ src: '~/plugins/consoleBranding', mode: 'client' }],
+
   // === Router configuration ===
   router: {
     options: {
