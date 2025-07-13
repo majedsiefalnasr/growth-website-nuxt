@@ -61,6 +61,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxtjs/seo',
     '@nuxt/ui',
+    '@nuxt/image',
     // ...add or remove modules as needed
   ],
 
@@ -86,6 +87,25 @@ export default defineNuxtConfig({
       pathPrefix: false, // No path prefix for components
     },
   ],
+
+  // === Nuxt Image module configuration ===
+  image: {
+    // See https://image.nuxt.com/getting-started/configuration for all options
+    // Default provider is 'ipx', which works out of the box
+    // You can add domains, presets, and more as needed
+    format: ['avif', 'webp'], // will default to original format if optimization not possible
+    quality: 80, // Set global quality for images - small enough quality change that it should not impact ux
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+      '2xl': 1536,
+    },
+    // Add more options as needed
+  },
 
   // === App-level HTML head configuration ===
   app: {
