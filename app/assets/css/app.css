@@ -4,3 +4,8 @@
 
 /* Nuxt UI */
 @import '@nuxt/ui';
+
+/* STC Forward Font */
+@theme static {
+  --font-sans: 'STC Forward', ui-sans-serif, system-ui, sans-serif;
+}

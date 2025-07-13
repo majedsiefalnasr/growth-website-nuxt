@@ -1,0 +1,30 @@
+/* STC Forward Font */
+@font-face {
+  font-style: normal;
+  font-weight: 500;
+  src:
+    url('/assets/fonts/stc-forward/STCForward-Medium.woff2') format('woff2'),
+    url('/assets/fonts/stc-forward/STCForward-Medium.woff') format('woff');
+  font-family: 'STC Forward';
+  font-display: swap;
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: normal;
+  src:
+    url('/assets/fonts/stc-forward/STCForward-Regular.woff2') format('woff2'),
+    url('/assets/fonts/stc-forward/STCForward-Regular.woff') format('woff');
+  font-family: 'STC Forward';
+  font-display: swap;
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: bold;
+  src:
+    url('/assets/fonts/stc-forward/STCForward-Bold.woff2') format('woff2'),
+    url('/assets/fonts/stc-forward/STCForward-Bold.woff') format('woff');
+  font-family: 'STC Forward';
+  font-display: swap;
+}

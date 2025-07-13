@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     // ...other modules
   ],
-  css: ['~/assets/css/app.css'],
+  css: ['~/assets/css/app.css', '~/assets/css/fonts.css'],
   vite: {
     plugins: [tailwindcss()],
   },
