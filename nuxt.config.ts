@@ -17,6 +17,56 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  // App-level HTML head configuration
+  app: {
+    head: {
+      meta: [
+        {
+          'http-equiv': 'Content-Security-Policy',
+          content: `
+            default-src 'self' https: http:;
+            script-src 'self' 'unsafe-inline' 'unsafe-eval' https: http: *.googletagmanager.com *.mutinycdn.com;
+            style-src 'self' 'unsafe-inline' https: http:;
+            object-src https: http:;
+            base-uri 'self';
+            connect-src 'self' https: http: wss: ws: *.google-analytics.com *.analytics.google.com *.googletagmanager.com *.mutinyhq.com *.mutinyhq.io *.mutinycdn.com;
+            frame-src 'self' https: http:;
+            img-src 'self' https: http: data: *.google-analytics.com *.googletagmanager.com *.mutinycdn.com;
+            manifest-src 'self'; media-src 'self' https: http:;
+            child-src 'self' blob: https: http:;
+            font-src 'self' https: http: data:;
+          `,
+        },
+        { name: 'format-detection', content: 'telephone=no' },
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'apple-mobile-web-app-capable', content: 'yes' },
+        { name: 'apple-mobile-web-app-status-bar-style', content: 'default' },
+        { name: 'apple-mobile-web-app-title', content: 'Growth' },
+      ],
+      link: [
+        // Favicon and icons
+        {
+          rel: 'icon',
+          type: 'image/png',
+          href: '/favicon/favicon-96x96.png',
+          sizes: '96x96',
+        },
+        {
+          rel: 'icon',
+          type: 'image/svg+xml',
+          href: '/favicon/favicon.svg',
+        },
+        { rel: 'shortcut icon', href: '/favicon/favicon.ico' },
+        {
+          rel: 'apple-touch-icon',
+          sizes: '180x180',
+          href: '/favicon/apple-touch-icon.png',
+        },
+        { rel: 'manifest', href: '/favicon/site.webmanifest' },
+      ],
+    },
+  },
   // Nuxt SEO: site-wide metadata configuration
   site: {
     url: 'https://growth.example.com', // Update with your production domain
@@ -24,7 +74,7 @@ export default defineNuxtConfig({
     description: 'Growth is a platform to empower individuals and small businesses online.',
     defaultLocale: 'en',
     image: {
-      url: '/favicon.ico',
+      url: '/favicon/favicon.ico',
       alt: 'Growth logo',
       width: 512,
       height: 512,
@@ -52,7 +102,7 @@ export default defineNuxtConfig({
     themeColor: '#0ea5e9',
     language: 'en',
     image: {
-      url: '/favicon.ico',
+      url: '/favicon/favicon.ico',
       alt: 'Growth logo',
       width: 512,
       height: 512,
@@ -107,7 +157,7 @@ export default defineNuxtConfig({
     organization: {
       name: 'Growth',
       url: 'https://growth.example.com',
-      logo: '/favicon.ico',
+      logo: '/favicon/favicon.ico',
       description: 'Growth is a platform to empower individuals and small businesses online.',
     },
     webSite: {
