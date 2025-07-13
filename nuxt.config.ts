@@ -1,40 +1,110 @@
 /* global defineNuxtConfig */
 import tailwindcss from '@tailwindcss/vite'
 
+/**
+ * Nuxt configuration for Growth platform
+ *
+ * - Maintains all site-wide constants at the top for easy updates
+ * - Groups related configuration for clarity
+ * - Adds comments and JSDoc for maintainability
+ * - Includes runtimeConfig placeholder for secrets and environment variables
+ *
+ * @see https://nuxt.com/docs/api/configuration/nuxt-config
+ */
+
+// === Site-wide constants for maintainability ===
+const SITE_URL = 'https://growth.example.com' // Update with your production domain
+const SITE_NAME = 'Growth'
+const SITE_DESCRIPTION = 'Growth is a platform to empower individuals and small businesses online.'
+const SITE_IMAGE = {
+  url: '/favicon/favicon.ico',
+  alt: 'Growth logo',
+  width: 512,
+  height: 512,
+  type: 'image/x-icon',
+}
+const SITE_AUTHOR = {
+  name: 'Growth Team',
+  url: `${SITE_URL}/about`,
+}
+const SITE_TWITTER = 'https://twitter.com/growthplatform'
+const SITE_TWITTER_HANDLE = '@growthplatform'
+const SITE_FACEBOOK = 'https://www.facebook.com/growthplatform'
+const SITE_LINKEDIN = 'https://www.linkedin.com/company/growthplatform'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  /**
+   * Runtime config for secrets and environment variables Use this section to securely manage API
+   * keys and other sensitive data. Values in `public` are exposed to the client; others are
+   * server-only.
+   *
+   * @see https://nuxt.com/docs/guide/going-further/runtime-config
+   */
+  runtimeConfig: {
+    // Example: apiSecret: process.env.API_SECRET,
+    public: {
+      // Example: publicApiBase: process.env.PUBLIC_API_BASE || ''
+    },
+  },
+
+  // === Nuxt 4 configuration options ===
   future: {
     compatibilityVersion: 4,
   },
+
+  // === Enable Nuxt DevTools for development convenience ===
   devtools: { enabled: true },
+
+  // === Nuxt modules to enhance project functionality ===
   modules: [
     '@nuxt/eslint',
     '@nuxtjs/seo',
     '@nuxt/ui',
-    // ...other modules
+    // ...add or remove modules as needed
   ],
+
+  // === Nuxt UI configuration ===
   css: ['~/assets/css/app.css', '~/assets/css/fonts.css'],
+
+  // === Vite configuration ===
   vite: {
     plugins: [tailwindcss()],
   },
-  // App-level HTML head configuration
+
+  // === Router configuration ===
+  router: {
+    options: {
+      strict: false, // Treat /page and /page/ as distinct
+    },
+  },
+
+  // === Components auto-import configuration ===
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false, // No path prefix for components
+    },
+  ],
+
+  // === App-level HTML head configuration ===
   app: {
     head: {
       meta: [
         {
           'http-equiv': 'Content-Security-Policy',
           content: `
-            default-src 'self' https: http:;
+            default-src 'self' https: http;;
             script-src 'self' 'unsafe-inline' 'unsafe-eval' https: http: *.googletagmanager.com *.mutinycdn.com;
-            style-src 'self' 'unsafe-inline' https: http:;
-            object-src https: http:;
+            style-src 'self' 'unsafe-inline' https: http;;
+            object-src https: http;;
             base-uri 'self';
             connect-src 'self' https: http: wss: ws: *.google-analytics.com *.analytics.google.com *.googletagmanager.com *.mutinyhq.com *.mutinyhq.io *.mutinycdn.com;
-            frame-src 'self' https: http:;
+            frame-src 'self' https: http;;
             img-src 'self' https: http: data: *.google-analytics.com *.googletagmanager.com *.mutinycdn.com;
-            manifest-src 'self'; media-src 'self' https: http:;
-            child-src 'self' blob: https: http:;
-            font-src 'self' https: http: data:;
+            manifest-src 'self'; media-src 'self' https: http;;
+            child-src 'self' blob: https: http;;
+            font-src 'self' https: http: data;;
           `,
         },
         { name: 'format-detection', content: 'telephone=no' },
@@ -42,7 +112,7 @@ export default defineNuxtConfig({
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'apple-mobile-web-app-capable', content: 'yes' },
         { name: 'apple-mobile-web-app-status-bar-style', content: 'default' },
-        { name: 'apple-mobile-web-app-title', content: 'Growth' },
+        { name: 'apple-mobile-web-app-title', content: SITE_NAME },
       ],
       link: [
         // Favicon and icons
@@ -67,52 +137,43 @@ export default defineNuxtConfig({
       ],
     },
   },
-  // Nuxt SEO: site-wide metadata configuration
+
+  // === Nuxt SEO: site-wide metadata configuration ===
   site: {
-    url: 'https://growth.example.com', // Update with your production domain
-    name: 'Growth',
-    description: 'Growth is a platform to empower individuals and small businesses online.',
+    url: SITE_URL,
+    name: SITE_NAME,
+    description: SITE_DESCRIPTION,
     defaultLocale: 'en',
-    image: {
-      url: '/favicon/favicon.ico',
-      alt: 'Growth logo',
-      width: 512,
-      height: 512,
-      type: 'image/x-icon',
-    },
-    author: {
-      name: 'Growth Team',
-      url: 'https://growth.example.com/about',
-    },
+    image: SITE_IMAGE,
+    author: SITE_AUTHOR,
     social: {
-      twitter: 'https://twitter.com/growthplatform',
+      twitter: SITE_TWITTER,
+      facebook: SITE_FACEBOOK,
+      linkedIn: SITE_LINKEDIN,
       // Add more social links as needed
     },
   },
-  // Example: enable/disable submodules as needed
+
+  // === SEO module configuration ===
   seo: {
     enabled: true,
-    title: 'Growth',
-    description: 'Growth is a platform to empower individuals and small businesses online.',
-    ogSiteName: 'Growth',
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    ogSiteName: SITE_NAME,
     ogType: 'website',
     twitterCard: 'summary_large_image',
-    twitterSite: '@growthplatform', // Update with your Twitter handle
-    canonical: 'https://growth.example.com', // Update with your domain
+    twitterSite: SITE_TWITTER_HANDLE, // Twitter handle
+    canonical: SITE_URL,
     themeColor: '#0ea5e9',
     language: 'en',
-    image: {
-      url: '/favicon/favicon.ico',
-      alt: 'Growth logo',
-      width: 512,
-      height: 512,
-      type: 'image/x-icon',
-    },
-    author: 'Growth Team',
+    image: SITE_IMAGE,
+    author: SITE_AUTHOR.name,
     keywords: ['growth', 'business', 'platform', 'academy', 'blog', 'contact', 'pricing'],
     robots: 'index, follow',
     // Add more SEO options as needed
   },
+
+  // === Additional modules for SEO, OG image generation, sitemap, robots.txt, and schema.org ===
   ogImage: {
     enabled: true,
     // You can customize OG image generation here
@@ -121,13 +182,17 @@ export default defineNuxtConfig({
     // provider: 'browser',
     // options: { ... }
   },
+
+  // === Sitemap configuration ===
   sitemap: {
     enabled: true,
-    siteUrl: 'https://growth.example.com',
+    siteUrl: SITE_URL,
     autoLastmod: true,
     exclude: ['/secret/**'],
     // Add more sitemap options as needed
   },
+
+  // === Robots.txt configuration ===
   robots: {
     enabled: true,
     blockAiBots: true,
@@ -137,43 +202,46 @@ export default defineNuxtConfig({
         allow: '/',
       },
     ],
-    sitemap: 'https://growth.example.com/sitemap.xml',
+    sitemap: `${SITE_URL}/sitemap.xml`,
     // Add more robots options as needed
   },
+
+  // === Schema.org structured data for SEO ===
   schemaOrg: {
     enabled: true,
-    canonicalHost: 'https://growth.example.com',
+    canonicalHost: SITE_URL,
     defaultLanguage: 'en',
     identity: {
-      name: 'Growth',
+      name: SITE_NAME,
       logo: '/favicon.ico',
-      url: 'https://growth.example.com',
-      sameAs: [
-        'https://twitter.com/growthplatform',
-        // Add more as needed
-      ],
-      description: 'Growth is a platform to empower individuals and small businesses online.',
+      url: SITE_URL,
+      sameAs: [SITE_TWITTER, SITE_FACEBOOK, SITE_LINKEDIN],
+      description: SITE_DESCRIPTION,
     },
     organization: {
-      name: 'Growth',
-      url: 'https://growth.example.com',
+      name: SITE_NAME,
+      url: SITE_URL,
       logo: '/favicon/favicon.ico',
-      description: 'Growth is a platform to empower individuals and small businesses online.',
+      description: SITE_DESCRIPTION,
     },
     webSite: {
-      name: 'Growth',
-      url: 'https://growth.example.com',
-      description: 'Growth is a platform to empower individuals and small businesses online.',
+      name: SITE_NAME,
+      url: SITE_URL,
+      description: SITE_DESCRIPTION,
       inLanguage: 'en',
     },
     // Add more schema.org options as needed
   },
+
+  // === Link checker configuration ===
   linkChecker: {
     // enabled: false,
   },
-  // ESLint configuration
+
+  // === ESLint configuration ===
   eslint: {
     // options here
   },
-  // You can add more Nuxt 4 options here as needed
+
+  // === Add more Nuxt 4 options here as needed ===
 })
