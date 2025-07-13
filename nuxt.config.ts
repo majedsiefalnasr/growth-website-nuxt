@@ -62,6 +62,7 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
     '@nuxt/ui',
     '@nuxt/image',
+    '@nuxtjs/i18n',
     // ...add or remove modules as needed
   ],
 
@@ -261,6 +262,41 @@ export default defineNuxtConfig({
   // === ESLint configuration ===
   eslint: {
     // options here
+  },
+
+  // Internationalization settings
+  i18n: {
+    bundle: {
+      optimizeTranslationDirective: false,
+    },
+    defaultLocale: 'en',
+    locales: [
+      {
+        code: 'en',
+        language: 'en',
+        label: 'English',
+        langLabel: 'Language',
+        file: 'en.json',
+        dir: 'ltr',
+      },
+      {
+        code: 'ar',
+        language: 'ar',
+        label: 'Arabic',
+        langLabel: 'اللغة',
+        file: 'ar.json',
+        dir: 'rtl',
+      },
+    ],
+    strategy: 'prefix_except_default',
+    langDir: 'locales',
+    lazy: true,
+    vueI18n: 'i18n.config.ts',
+    detectBrowserLanguage: {
+      useCookie: false,
+      redirectOn: 'root',
+      fallbackLocale: 'en',
+    },
   },
 
   // === Add more Nuxt 4 options here as needed ===

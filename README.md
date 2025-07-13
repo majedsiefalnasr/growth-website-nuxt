@@ -121,6 +121,10 @@ For full details, see `.github/copilot-instructions.md`.
   SEO optimization for Nuxt applications.  
   See [docs/nuxtjs-seo-integration.md](docs/nuxtjs-seo-integration.md).
 
+- **Nuxt i18n**
+  Internationalization support for multiple languages.  
+  See [docs/nuxtjs-i18n-integration.md](docs/nuxtjs-i18n-integration.md).
+
 - **lint-staged**  
   Run linters on pre-committed files.  
   See [docs/lint-staged-integration.md](docs/lint-staged-integration.md).
