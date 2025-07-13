@@ -1,11 +1,3 @@
-<template>
-  <UApp>
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
-  </UApp>
-</template>
-
 <script setup lang="ts">
 import * as locales from '@nuxt/ui/locale'
 
@@ -21,3 +13,11 @@ useHead({
   },
 })
 </script>
+
+<template>
+  <UApp>
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </UApp>
+</template>

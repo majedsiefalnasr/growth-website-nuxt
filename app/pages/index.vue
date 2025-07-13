@@ -1,3 +1,7 @@
+<script setup lang="ts">
+// Reason: This is the main landing page for the Nuxt 4 app structure.
+</script>
+
 <template>
   <div>
     <h1>Welcome to Growth (Nuxt 4)</h1>
@@ -7,7 +11,3 @@
     </p>
   </div>
 </template>
-
-<script setup lang="ts">
-// Reason: This is the main landing page for the Nuxt 4 app structure.
-</script>
