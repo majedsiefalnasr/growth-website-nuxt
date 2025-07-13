@@ -117,6 +117,10 @@ For full details, see `.github/copilot-instructions.md`.
   Code formatting tool integrated with ESLint and Tailwind CSS.  
   See [docs/prettier-integration.md](docs/prettier-integration.md).
 
+- **@iconify-json/ph**  
+  Phosphor icon set for use with Iconify-compatible icon components.  
+  See [docs/iconify-json-ph-integration.md](docs/iconify-json-ph-integration.md).
+
 - **Nuxt SEO**  
   SEO optimization for Nuxt applications.  
   See [docs/nuxtjs-seo-integration.md](docs/nuxtjs-seo-integration.md).
