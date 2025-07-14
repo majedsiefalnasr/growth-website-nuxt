@@ -11,4 +11,16 @@
 /* STC Forward Font */
 @theme static {
   --font-sans: 'STC Forward', ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand-50: #ecf6f8;
+  --color-brand-100: #d9ecf2;
+  --color-brand-200: #b4dae4;
+  --color-brand-300: #8ec7d7;
+  --color-brand-400: #69b4c9;
+  --color-brand-500: #1e4854;
+  --color-brand-600: #368196;
+  --color-brand-700: #286171;
+  --color-brand-800: #1b414b;
+  --color-brand-900: #0d2026;
+  --color-brand-950: #051014;
 }
