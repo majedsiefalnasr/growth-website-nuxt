@@ -1,5 +1,4 @@
 <!-- Default layout for Nuxt 4 with Cuberto Mouse Follower integration -->
-
 <script setup lang="ts">
 import { useMouseFollower } from '~/composables/useMouseFollower'
 
@@ -8,7 +7,7 @@ useMouseFollower()
 </script>
 
 <template>
-  <UContainer>
+  <UContainer class="min-h-screen min-w-full">
     <slot />
     <FloatingActions />
   </UContainer>
