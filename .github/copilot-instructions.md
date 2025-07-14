@@ -24,6 +24,8 @@
 
 ### 📎 Style & Conventions
 
+- **Always use TailwindCSS utility classes for styling wherever possible.** Avoid custom CSS unless a style cannot be achieved with Tailwind.
+- **Always use NuxtUI components instead of bare HTML wherever possible.** Only use raw HTML if a NuxtUI component does not exist for the required functionality or markup.
 - Write **docstrings for every function** using the Google style.
 - For JavaScript/TypeScript code, **add JSDoc comments for every function, class, and exported symbol**.
 
