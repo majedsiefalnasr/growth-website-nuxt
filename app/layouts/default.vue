@@ -10,5 +10,6 @@ useMouseFollower()
 <template>
   <UContainer>
     <slot />
+    <FloatingActions />
   </UContainer>
 </template>
