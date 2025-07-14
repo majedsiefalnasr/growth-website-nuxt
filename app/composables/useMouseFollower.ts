@@ -141,20 +141,21 @@ export function useMouseFollower(): void {
       cursor = !cursor && hasFinePointer() ? init() : destroy(cursor)
     }
     window.addEventListener('resize', resizeHandler)
-    // Listen for pointer type changes (e.g. attach/detach mouse)
-    if ('onpointerdown' in window) {
-      window.addEventListener('pointerdown', resizeHandler)
-      window.addEventListener('pointerup', resizeHandler)
-    }
+    // Listen for pointer device connect/disconnect events only
+    window.addEventListener('pointerover', (event: PointerEvent) => {
+      if (event.pointerType === 'mouse') {
+        // Mouse/trackpad connected
+        if (!cursor && hasFinePointer()) cursor = init()
+      } else {
+        // Touch/pen or other device, destroy if exists
+        if (cursor) cursor = destroy(cursor)
+      }
+    })
   })
 
   onBeforeUnmount(() => {
     if (resizeHandler) {
       window.removeEventListener('resize', resizeHandler)
-      if ('onpointerdown' in window) {
-        window.removeEventListener('pointerdown', resizeHandler)
-        window.removeEventListener('pointerup', resizeHandler)
-      }
     }
     destroy(cursor)
   })
