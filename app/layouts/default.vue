@@ -7,7 +7,8 @@ useMouseFollower()
 </script>
 
 <template>
-  <UContainer class="min-h-screen min-w-full">
+  <UContainer class="min-h-screen">
+    <Navbar />
     <slot />
     <FloatingActions />
   </UContainer>
