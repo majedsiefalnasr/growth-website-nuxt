@@ -65,7 +65,6 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
     '@nuxtjs/seo',
-    '@nuxt/ui',
     '@nuxt/image',
     '@nuxtjs/i18n',
     // ...add or remove modules as needed
@@ -75,7 +74,10 @@ export default defineNuxtConfig({
   css: ['~/assets/css/app.css', '~/assets/css/fonts.css'],
 
   // === Plugins ===
-  plugins: [{ src: '~/plugins/consoleBranding', mode: 'client' }],
+  plugins: [
+    { src: '~/plugins/consoleBranding', mode: 'client' },
+    { src: '~/plugins/bootstrap.client.ts', mode: 'client' },
+  ],
 
   // === Router configuration ===
   router: {

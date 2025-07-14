@@ -97,17 +97,13 @@ For full details, see `.github/copilot-instructions.md`.
 
 ## Integrations & Tooling
 
-- **Nuxt UI (`@nuxt/ui`)**  
-  Accessible, customizable UI components for Nuxt.  
-  See [docs/nuxt-ui-integration.md](docs/nuxt-ui-integration.md).
+- **Bootstrap 5**  
+  Popular CSS framework for responsive design.  
+  See [docs/bootstrap-integration.md](docs/bootstrap-integration.md).
 
 - **TypeScript for Vue (`vue-tsc`)**  
   Type checking and import organization for `.vue` files.  
   See [docs/vue-tsc-integration.md](docs/vue-tsc-integration.md).
-
-- **Tailwind CSS**  
-  Utility-first CSS framework for styling.  
-  See [docs/tailwind-css-integration.md](docs/tailwind-css-integration.md).
 
 - **ESLint**  
   Linting for JavaScript/TypeScript code.  

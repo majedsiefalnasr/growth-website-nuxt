@@ -14,8 +14,7 @@
     "prettier-plugin-css-order",
     "prettier-plugin-jsdoc",
     "prettier-plugin-organize-attributes",
-    "prettier-plugin-organize-imports",
-    "prettier-plugin-tailwindcss" 
+    "prettier-plugin-organize-imports"
   ],
   "attributeGroups": ["^class$", "^(id|name)$", "$DEFAULT", "^aria-"]
 }
