@@ -4,11 +4,14 @@
 
 <template>
   <div>
-    <h1>Welcome to Growth (Nuxt 4)</h1>
-    <p>
-      This is your new Nuxt 4 home page. Start building your app in
-      <code>app/pages/index.vue</code>.
-    </p>
-    <ColorModeSwitcher />
+    <PageLoader :duration="3000" />
+    <div>
+      <h1>Welcome to Growth (Nuxt 4)</h1>
+      <p>
+        This is your new Nuxt 4 home page. Start building your app in
+        <code>app/pages/index.vue</code>.
+      </p>
+      <ColorModeSwitcher />
+    </div>
   </div>
 </template>
