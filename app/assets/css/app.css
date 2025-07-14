@@ -5,6 +5,9 @@
 /* Nuxt UI */
 @import '@nuxt/ui';
 
+/* Cuberto Mouse Follower Cursor Styles */
+@import './cursor.css';
+
 /* STC Forward Font */
 @theme static {
   --font-sans: 'STC Forward', ui-sans-serif, system-ui, sans-serif;

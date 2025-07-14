@@ -1,5 +1,10 @@
+<!-- Default layout for Nuxt 4 with Cuberto Mouse Follower integration -->
+
 <script setup lang="ts">
-// No additional logic required for Nuxt UI 3.2 layout
+import { useMouseFollower } from '~/composables/useMouseFollower'
+
+// Initialize Cuberto Mouse Follower globally (only once for the app)
+useMouseFollower()
 </script>
 
 <template>

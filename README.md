@@ -137,6 +137,9 @@ For full details, see `.github/copilot-instructions.md`.
   Git hooks for running scripts before commits/pushes.  
   See [docs/husky-integration.md](docs/husky-integration.md).
 
+- **Cuberto Mouse Follower Integration**  
+  See [docs/mouse-follower-integration.md](./docs/mouse-follower-integration.md).
+
 ---
 
 Built with ❤️ by contributors.
