@@ -136,6 +136,10 @@ For full details, see `.github/copilot-instructions.md`.
 - **Cuberto Mouse Follower Integration**  
   See [docs/mouse-follower-integration.md](./docs/mouse-follower-integration.md).
 
+- **@nuxtjs/color-mode**
+  Dark/light mode support with auto-detection.  
+  See [docs/nuxtjs-color-mode-integration.md](docs/nuxtjs-color-mode-integration.md).
+
 ---
 
 Built with ❤️ by contributors.

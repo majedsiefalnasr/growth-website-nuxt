@@ -67,6 +67,7 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
     '@nuxt/image',
     '@nuxtjs/i18n',
+    '@nuxtjs/color-mode',
     // ...add or remove modules as needed
   ],
 
