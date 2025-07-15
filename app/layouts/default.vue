@@ -13,3 +13,9 @@ useMouseFollower()
     <FloatingActions />
   </div>
 </template>
+
+<style scoped>
+.container {
+  opacity: 0;
+}
+</style>

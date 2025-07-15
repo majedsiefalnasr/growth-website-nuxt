@@ -1,3 +1,8 @@
+/* View content */
+.container {
+  opacity: 1 !important;
+}
+
 /* Container */
 .container,
 .container-fluid,
