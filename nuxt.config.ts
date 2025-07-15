@@ -66,13 +66,13 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxtjs/seo',
     '@nuxt/image',
-    '@nuxtjs/i18n',
+    '@nuxtjs/i18n', // ...add or remove modules as needed
     '@nuxtjs/color-mode',
-    // ...add or remove modules as needed
+    '@nuxt/icon',
   ],
 
   // === Nuxt UI configuration ===
-  css: ['~/assets/css/app.css', '~/assets/css/fonts.css'],
+  css: ['~/assets/css/app.css'],
 
   // === Plugins ===
   plugins: [
@@ -112,6 +112,14 @@ export default defineNuxtConfig({
       '2xl': 1536,
     },
     // Add more options as needed
+  },
+
+  // === Nuxt Icon module configuration ===
+  icon: {
+    size: '24px', // default <Icon> size applied
+    class: 'icon', // default <Icon> class applied
+    mode: 'css', // default <Icon> mode applied
+    cssLayer: 'base', // set the css layer to inject to
   },
 
   /**
