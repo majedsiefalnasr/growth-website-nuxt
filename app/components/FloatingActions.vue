@@ -2,16 +2,18 @@
 import { onMounted, onUnmounted, ref } from 'vue'
 
 /**
- * FloatingActions component provides floating share and back-to-top actions.
- *
- * @module FloatingActions
+ * Ref for the floating actions container.
+ * @type {import('vue').Ref<HTMLElement | null>}
  */
+const containerRef = ref<HTMLElement | null>(null)
 
+/**
+ * Controls the visibility of the floating actions.
+ */
 const isVisible = ref(false)
 
 /**
  * Handles scroll event to toggle floating actions visibility.
- *
  * @returns {void}
  */
 function handleScroll(): void {
@@ -19,8 +21,7 @@ function handleScroll(): void {
 }
 
 /**
- * Shares the current page using the Web Share API.
- *
+ * Shares the current page using the Web Share API or shows an alert if not supported.
  * @returns {void}
  */
 function onShare(): void {
@@ -35,14 +36,12 @@ function onShare(): void {
   if (navigator.share) {
     navigator.share(shareData)
   } else {
-    // Reason: Fallback for browsers that do not support Web Share API
     alert('Sharing is not supported in this browser.')
   }
 }
 
 /**
  * Scrolls the window to the top smoothly.
- *
  * @returns {void}
  */
 function onBackToTop(): void {
@@ -50,8 +49,8 @@ function onBackToTop(): void {
 }
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
   handleScroll()
+  window.addEventListener('scroll', handleScroll)
 })
 
 onUnmounted(() => {
@@ -62,40 +61,52 @@ onUnmounted(() => {
 <template>
   <div
     id="floating-actions"
+    ref="containerRef"
     :class="[
-      'fixed right-8 bottom-8 z-[100] flex gap-2 transition-all duration-500 ease-[cubic-bezier(0.694,0,0.335,1)]',
-      isVisible
-        ? 'pointer-events-auto translate-y-0 opacity-100'
-        : 'pointer-events-none translate-y-32 opacity-0',
+      'position-fixed d-flex gap-2 z-3 end-0 me-4',
+      isVisible ? 'view pointer-events-auto' : '',
     ]"
+    style="bottom: 2rem; transition: all 500ms cubic-bezier(0.694, 0, 0.335, 1)"
     aria-label="Floating actions"
   >
     <!-- Share -->
-    <UButton
-      icon="i-ph-share-network"
-      color="primary"
-      variant="solid"
-      class="bg-brand-800 hover:bg-brand-700 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full text-2xl text-white"
+    <button
+      type="button"
+      class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center p-0"
       aria-label="Share"
       @click="onShare"
-    />
+    >
+      <Icon name="ph:share-network" />
+    </button>
+
     <!-- Back to top -->
-    <UButton
-      icon="i-ph-caret-up"
-      color="primary"
-      variant="solid"
-      class="bg-brand-800 hover:bg-brand-700 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full text-2xl text-white transition-all delay-100 duration-500"
+    <button
+      type="button"
+      class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center p-0"
       aria-label="Back to top"
-      :class="
-        isVisible
-          ? 'pointer-events-auto translate-y-0 opacity-100'
-          : 'pointer-events-none translate-y-32 opacity-0'
-      "
       @click="onBackToTop"
-    />
+    >
+      <Icon name="ph:caret-up" />
+    </button>
   </div>
 </template>
 
 <style scoped>
-/* No additional styles needed; all handled by Tailwind classes */
+#floating-actions {
+  transform: translateY(7.5rem);
+  opacity: 0;
+  pointer-events: none;
+}
+#floating-actions.view {
+  transform: translateY(0);
+  opacity: 1 !important;
+  pointer-events: auto;
+}
+button {
+  width: 3rem;
+  height: 3rem;
+}
+button:hover {
+  transform: none !important;
+}
 </style>
