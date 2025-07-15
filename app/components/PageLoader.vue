@@ -1,103 +1,81 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { onMounted } from 'vue'
 
 /**
- * PageLoader.vue
- *
- * A reusable, accessible page loading overlay for Nuxt. Shows a centered logo and blocks
- * interaction while visible. Loader stays visible for at least 1 second, even if loading completes
- * sooner.
- *
- * @example
- *   <PageLoader :show="isLoading" :duration="3000" />
- *
- * @property {boolean} show - Controls loader visibility (default: true)
- * @property {number | null} duration - How long to show the loader (ms). If set, loader auto-hides
- *   after this duration.
- * @component
+ * Hides the page loader after the page is fully loaded, waiting at least 1 second.
+ * Ensures a smooth transition and prevents flicker for fast loads.
  */
-const TRANSITION_DURATION = 300 // ms, must match CSS
-const MIN_VISIBLE_DURATION = 1000 // ms
+onMounted(() => {
+  // Reason: Wait for both DOMContentLoaded and a minimum delay for UX smoothness
+  const loader = document.getElementById('page-loader')
+  if (!loader) return
 
-const props = defineProps({
-  show: {
-    type: Boolean,
-    default: true,
-  },
-  duration: {
-    type: Number,
-    default: null,
-  },
-})
+  const hideLoader = () => {
+    loader.classList.add('hide')
+    // Optionally, remove loader from DOM after transition for accessibility
+    setTimeout(() => {
+      loader.setAttribute('aria-hidden', 'true')
+    }, 350) // matches CSS transition
+  }
 
-const visible = ref(props.show)
-const isSlidingUp = ref(false)
-const loaderRef = ref<HTMLElement | null>(null)
-let hideTimer: ReturnType<typeof setTimeout> | null = null
-let transitionTimer: ReturnType<typeof setTimeout> | null = null
+  // Wait for both DOMContentLoaded and 1s minimum
+  let loaded = false
+  let timerDone = false
 
-/**
- * Handles showing and hiding the loader with minimum duration and transition.
- *
- * @param {boolean} val - Whether the loader should be shown.
- */
-function handleLoaderVisibility(val: boolean): void {
-  clearTimers()
-  if (val) {
-    visible.value = true
-    isSlidingUp.value = false
-    // If duration is set, auto-hide after duration
-    if (props.duration) {
-      hideTimer = setTimeout(() => startSlideUp(), props.duration)
-    }
+  const tryHide = () => {
+    if (loaded && timerDone) hideLoader()
+  }
+
+  setTimeout(() => {
+    timerDone = true
+    tryHide()
+  }, 1000)
+
+  if (document.readyState === 'complete') {
+    loaded = true
+    tryHide()
   } else {
-    // Always show for at least MIN_VISIBLE_DURATION
-    hideTimer = setTimeout(() => startSlideUp(), MIN_VISIBLE_DURATION)
+    window.addEventListener('load', () => {
+      loaded = true
+      tryHide()
+    })
   }
-}
-
-/** Starts the slide-up transition and hides the loader after the animation. */
-function startSlideUp(): void {
-  isSlidingUp.value = true
-  transitionTimer = setTimeout(() => {
-    visible.value = false
-  }, TRANSITION_DURATION)
-}
-
-/** Clears all running timers to prevent memory leaks. */
-function clearTimers(): void {
-  if (hideTimer) {
-    clearTimeout(hideTimer)
-    hideTimer = null
-  }
-  if (transitionTimer) {
-    clearTimeout(transitionTimer)
-    transitionTimer = null
-  }
-}
-
-watch(() => props.show, handleLoaderVisibility, { immediate: true })
+})
 </script>
 
 <template>
   <div
-    v-if="visible"
-    ref="loaderRef"
-    aria-live="polite"
-    aria-busy="true"
-    :class="[
-      'fixed inset-0 z-[800] flex h-screen w-full items-center justify-center overflow-hidden bg-[#e1eaed] transition-transform duration-300 ease-in',
-      isSlidingUp
-        ? 'translate-y-[-100%] transform will-change-transform'
-        : 'translate-y-0 transform',
-    ]"
+    id="page-loader"
+    class="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center"
   >
-    <div class="flex h-full w-full items-center justify-center">
+    <div class="d-flex flex-column align-items-center justify-content-center w-100 h-100">
       <img
-        class="max-h-12 w-full object-contain"
+        class="mb-3"
         src="/assets/images/logo.png"
         alt="Growth - your shopping partner"
+        style="max-height: 3rem"
       />
     </div>
   </div>
 </template>
+
+<style scoped>
+#page-loader {
+  transform: translate3d(0px, 0%, 0px);
+  transform-style: preserve-3d;
+  opacity: 1;
+  z-index: 800;
+  transition: transform 0.4s ease-in;
+  box-shadow: 1px 12px 24px 2px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 1px 12px 24px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 1px 12px 24px 2px rgba(0, 0, 0, 0.1);
+  background: #e1eaed;
+  overflow: hidden;
+}
+#page-loader.hide {
+  transform: translate3d(0px, -100%, 0px);
+}
+#page-loader.hide * {
+  pointer-events: none;
+}
+</style>
