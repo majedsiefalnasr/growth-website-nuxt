@@ -75,7 +75,11 @@ export default defineNuxtConfig({
   plugins: [
     { src: '~/plugins/consoleBranding', mode: 'client' },
     { src: '~/plugins/dynamic-css.client.ts', mode: 'client' },
+    { src: '~/plugins/animation.client.ts', mode: 'client' },
   ],
+
+  // === Global CSS files ===
+  css: ['~/assets/css/app.css'],
 
   // === Router configuration ===
   router: {
