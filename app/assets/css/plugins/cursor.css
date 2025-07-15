@@ -19,7 +19,7 @@
     color 0.4s;
   contain: layout style size;
   pointer-events: none;
-  color: var(--color-500);
+  color: var(--brand-500);
 }
 body.modal-open .g-cursor,
 body.page-loading .g-cursor {
@@ -69,7 +69,7 @@ body.page-loading .g-cursor {
   color: #fff;
 }
 .g-cursor.-inverse.-reverse {
-  color: var(--color-500);
+  color: var(--brand-500);
 }
 .g-cursor.-quaternary {
   color: #c9ffc5;

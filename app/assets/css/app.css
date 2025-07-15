@@ -1,5 +1,23 @@
 /* Bootstrap */
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
+/* Fonts */
+@import './fonts.css';
+
+/* Variables */
+@import './variables.css';
+
+/* Reset */
+@import './reset.css';
+
+/* Scrollbar */
+@import './scrollbar.css';
+
+/* Default */
+@import './default.css';
+
+/* Bootstrap */
+@import './plugins/bootstrap.css';
+
 /* Cuberto Mouse Follower Cursor Styles */
-@import './cursor.css';
+@import './plugins/cursor.css';

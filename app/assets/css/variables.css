@@ -1,0 +1,42 @@
+/* Variables */
+:root {
+  /* Viewport */
+  --minimum-viewport-widthPX: 428px;
+  --maximum-viewport-widthPX: 1440px;
+
+  /* Fonts */
+  --root-font-size: 16px;
+  --root-font-family:
+    'STC Forward', system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial,
+    'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+  --root-text-align: start;
+  --root-bg: #f1f5f6;
+
+  /* Animation */
+  --transition-normal: all 0.4s ease;
+  --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+
+  /* Colors */
+  --brand-white: #ffffff;
+  --brand-black: #141517;
+  --brand-50: #ecf6f8;
+  --brand-100: #d9ecf2;
+  --brand-200: #b4dae4;
+  --brand-300: #8ec7d7;
+  --brand-400: #69b4c9;
+  --brand-500: #1e4854;
+  --brand-600: #368196;
+  --brand-700: #286171;
+  --brand-800: #1b414b;
+  --brand-900: #0d2026;
+
+  /* Scroll margin */
+  --navbar-top-height: 7.5rem;
+  --scroll-margin-top: 2rem;
+}
