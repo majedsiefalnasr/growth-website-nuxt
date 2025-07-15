@@ -1,6 +1,3 @@
-/* Bootstrap */
-@import 'bootstrap/dist/css/bootstrap.min.css';
-
 /* Fonts */
 @import './fonts.css';
 
@@ -17,7 +14,7 @@
 @import './default.css';
 
 /* Bootstrap */
-@import './plugins/bootstrap.css';
+@import './plugins/bootstrap/bootstrap.css';
 
 /* Cuberto Mouse Follower Cursor Styles */
 @import './plugins/cursor.css';

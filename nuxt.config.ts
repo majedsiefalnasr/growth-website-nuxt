@@ -71,13 +71,10 @@ export default defineNuxtConfig({
     '@nuxt/icon',
   ],
 
-  // === Nuxt UI configuration ===
-  css: ['~/assets/css/app.css'],
-
   // === Plugins ===
   plugins: [
     { src: '~/plugins/consoleBranding', mode: 'client' },
-    { src: '~/plugins/bootstrap.client.ts', mode: 'client' },
+    { src: '~/plugins/dynamic-css.client.ts', mode: 'client' },
   ],
 
   // === Router configuration ===
