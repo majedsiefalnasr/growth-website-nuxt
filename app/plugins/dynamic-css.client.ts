@@ -37,7 +37,7 @@ export default defineNuxtPlugin((nuxtApp) => {
       },
       {
         id: 'custom-css',
-        href: '/assets/css/app.css',
+        href: '/assets/css/plugins/bootstrap/bootstrap.css',
       },
     ]
 

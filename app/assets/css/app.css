@@ -13,8 +13,8 @@
 /* Default */
 @import './default.css';
 
-/* Bootstrap */
-@import './plugins/bootstrap/bootstrap.css';
+/* Animation on Scroll */
+@import './plugins/animation.css';
 
 /* Cuberto Mouse Follower Cursor Styles */
 @import './plugins/cursor.css';
