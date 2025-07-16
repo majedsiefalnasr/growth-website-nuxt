@@ -28,6 +28,7 @@
 - **Use Bootstrap 5 components instead of bare HTML wherever possible.** Only use raw HTML if a Bootstrap 5 component does not exist for the required functionality or markup.
 - Write **docstrings for every function** using the Google style.
 - For JavaScript/TypeScript code, **add JSDoc comments for every function, class, and exported symbol**.
+- **Never use `any` as a type.** Always specify a more precise type, such as `unknown`, `Record<string, unknown>`, or a custom interface/type. If a type is truly unknown, use `unknown` instead of `any`.
 
 ### 📚 Documentation & Explainability
 
