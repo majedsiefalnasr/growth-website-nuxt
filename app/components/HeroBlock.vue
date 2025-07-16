@@ -69,7 +69,7 @@
 
       <!-- Futures -->
       <div class="col-12 col-xl-6 text-start">
-        <HeroFutures />
+        <HeroFutures :interval="4000" />
       </div>
     </div>
 

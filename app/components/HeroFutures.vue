@@ -1,32 +1,91 @@
 <script setup lang="ts">
 /**
- * Handles activation of feature items on click.
- * Uses native DOM APIs for event binding and class manipulation.
- * Ensures only one item is active at a time.
+ * Cycles the active feature item like a slider, with interval time passed as a prop.
+ * Removes manual click activation logic.
  *
- * @fileoverview Adds click event listeners to feature items to toggle 'active' class.
+ * @fileoverview Automatically cycles feature items' active state at a given interval.
  */
-import { onMounted } from 'vue'
+import { defineProps, onMounted, onUnmounted, ref } from 'vue'
 
 /**
- * Adds click event listeners to all feature items in the hero block.
- * Ensures only one item has the 'active' class at a time.
+ * Props for HeroFutures
+ * @property {number} interval - Time in milliseconds between active item changes
  */
+const props = defineProps<{ interval?: number }>()
+
+/**
+ * Index of the currently active feature item
+ */
+const activeIndex = ref(0)
+
+/**
+ * List of feature items (for rendering)
+ */
+const features = [
+  {
+    image: '/assets/images/future-ex.png',
+    icon: 'ph:gear',
+    label: 'No design or coding experience required',
+    text: 'لا حاجه لخبره بالتصميم او البرمجة',
+  },
+  {
+    image: '/assets/images/future-ex2.png',
+    icon: 'ph:translate',
+    label: 'All features included',
+    text: 'جميع المزايا مضمنة',
+  },
+  {
+    image: '/assets/images/future-ex3.png',
+    icon: 'ph:device-mobile-camera',
+    label: 'Premium support',
+    text: 'دعم فني مميز',
+  },
+]
+
+let timer: ReturnType<typeof setInterval> | null = null
+let paused = false
+
+/**
+ * Starts the auto-cycling timer
+ */
+function startTimer() {
+  if (timer) clearInterval(timer)
+  timer = setInterval(() => {
+    if (!paused) {
+      activeIndex.value = (activeIndex.value + 1) % features.length
+    }
+  }, props.interval ?? 5000)
+}
+
+/**
+ * Handles click on a feature item
+ * @param {number} idx - Index of clicked item
+ */
+function handleClick(idx: number) {
+  activeIndex.value = idx
+  startTimer() // Reset interval on click
+}
+
+/**
+ * Handles mouse enter (hover) on a feature item
+ */
+function handleMouseEnter() {
+  paused = true
+}
+
+/**
+ * Handles mouse leave on a feature item
+ */
+function handleMouseLeave() {
+  paused = false
+}
+
 onMounted(() => {
-  const items = document.querySelectorAll('#hero-block .futures .item')
-  items.forEach((target) => {
-    target.addEventListener('click', () => {
-      if (!target.classList.contains('active')) {
-        // Remove 'active' from previous item
-        const prevActive = document.querySelector('#hero-block .futures .item.active')
-        if (prevActive) {
-          prevActive.classList.remove('active')
-        }
-        // Add 'active' to clicked item
-        target.classList.add('active')
-      }
-    })
-  })
+  startTimer()
+})
+
+onUnmounted(() => {
+  if (timer) clearInterval(timer)
 })
 </script>
 
@@ -40,46 +99,25 @@ onMounted(() => {
     role="list"
     aria-label="Feature highlights"
   >
-    <!-- Feature Item: No design or coding experience required -->
     <div
-      class="item active"
-      style="background-image: url(/assets/images/future-ex.png)"
-      role="listitem"
-      aria-label="No design or coding experience required"
-    >
-      <div class="content d-flex gap-4 align-items-center">
-        <div class="icon">
-          <Icon name="ph:gear" />
-        </div>
-        <h3 tabindex="0">لا حاجه لخبره بالتصميم او البرمجة</h3>
-      </div>
-    </div>
-    <!-- Feature Item: All features included -->
-    <div
+      v-for="(feature, idx) in features"
+      :key="feature.label"
       class="item"
-      style="background-image: url(/assets/images/future-ex2.png)"
+      :class="{ active: idx === activeIndex }"
+      :style="`background-image: url(${feature.image})`"
       role="listitem"
-      aria-label="All features included"
+      :aria-label="feature.label"
+      tabindex="0"
+      :aria-pressed="idx === activeIndex"
+      @click="handleClick(idx)"
+      @mouseenter="handleMouseEnter"
+      @mouseleave="handleMouseLeave"
     >
       <div class="content d-flex gap-4 align-items-center">
         <div class="icon">
-          <Icon name="ph:translate" />
+          <Icon :name="feature.icon" />
         </div>
-        <h3 tabindex="0">جميع المزايا مضمنة</h3>
-      </div>
-    </div>
-    <!-- Feature Item: Premium support -->
-    <div
-      class="item"
-      style="background-image: url(/assets/images/future-ex3.png)"
-      role="listitem"
-      aria-label="Premium support"
-    >
-      <div class="content d-flex gap-4 align-items-center">
-        <div class="icon">
-          <Icon name="ph:device-mobile-camera" />
-        </div>
-        <h3 tabindex="0">دعم فني مميز</h3>
+        <h3 tabindex="0">{{ feature.text }}</h3>
       </div>
     </div>
   </div>
