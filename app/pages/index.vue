@@ -7,5 +7,6 @@
     <PageLoader />
     <HeroBlock />
     <Testimonials />
+    <MobileApp />
   </div>
 </template>
