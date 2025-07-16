@@ -8,5 +8,6 @@
     <HeroBlock />
     <Testimonials />
     <MobileApp />
+    <SellingOnline />
   </div>
 </template>
