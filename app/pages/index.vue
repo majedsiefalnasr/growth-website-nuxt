@@ -9,5 +9,6 @@
     <Testimonials />
     <MobileApp />
     <SellingOnline />
+    <DistinguishBrand />
   </div>
 </template>
