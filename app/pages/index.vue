@@ -6,5 +6,6 @@
   <div>
     <PageLoader />
     <HeroBlock />
+    <Testimonials />
   </div>
 </template>
