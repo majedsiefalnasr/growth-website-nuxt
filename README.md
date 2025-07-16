@@ -140,6 +140,10 @@ For full details, see `.github/copilot-instructions.md`.
   Dark/light mode support with auto-detection.  
   See [docs/nuxtjs-color-mode-integration.md](docs/nuxtjs-color-mode-integration.md).
 
+- **SplideJS Vue Integration**
+  Carousel/slider component for Vue.  
+  See [docs/splidejs-vue-integration.md](docs/splidejs-vue-integration.md).
+
 ---
 
 Built with ❤️ by contributors.
