@@ -5,5 +5,6 @@
 <template>
   <div>
     <PageLoader />
+    <HeroBlock />
   </div>
 </template>
