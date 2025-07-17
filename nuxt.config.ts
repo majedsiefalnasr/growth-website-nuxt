@@ -10,25 +10,8 @@
  * @see https://nuxt.com/docs/api/configuration/nuxt-config
  */
 
-// === Site-wide constants for maintainability ===
-const SITE_URL = 'https://growth.example.com' // Update with your production domain
-const SITE_NAME = 'Growth'
-const SITE_DESCRIPTION = 'Growth is a platform to empower individuals and small businesses online.'
-const SITE_IMAGE = {
-  url: '/favicon/favicon.ico',
-  alt: 'Growth logo',
-  width: 512,
-  height: 512,
-  type: 'image/x-icon',
-}
-const SITE_AUTHOR = {
-  name: 'Growth Team',
-  url: `${SITE_URL}/about`,
-}
-const SITE_TWITTER = 'https://twitter.com/growthplatform'
-const SITE_TWITTER_HANDLE = '@growthplatform'
-const SITE_FACEBOOK = 'https://www.facebook.com/growthplatform'
-const SITE_LINKEDIN = 'https://www.linkedin.com/company/growthplatform'
+import { schemaOrg } from './app/config/schemaOrg'
+import { app, identity, socialMedia } from './app/constants'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -156,7 +139,7 @@ export default defineNuxtConfig({
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'mobile-web-app-capable', content: 'yes' },
         { name: 'apple-mobile-web-app-status-bar-style', content: 'default' },
-        { name: 'apple-mobile-web-app-title', content: SITE_NAME },
+        { name: 'apple-mobile-web-app-title', content: app.title },
       ],
       link: [
         // Favicon and icons
@@ -184,37 +167,22 @@ export default defineNuxtConfig({
 
   // === Nuxt SEO: site-wide metadata configuration ===
   site: {
-    url: SITE_URL,
-    name: SITE_NAME,
-    description: SITE_DESCRIPTION,
-    defaultLocale: 'ar',
-    image: SITE_IMAGE,
-    author: SITE_AUTHOR,
-    social: {
-      twitter: SITE_TWITTER,
-      facebook: SITE_FACEBOOK,
-      linkedIn: SITE_LINKEDIN,
-      // Add more social links as needed
-    },
+    url: app.url,
+    name: app.title,
   },
 
   // === SEO module configuration ===
   seo: {
-    enabled: true,
-    title: SITE_NAME,
-    description: SITE_DESCRIPTION,
-    ogSiteName: SITE_NAME,
-    ogType: 'website',
-    twitterCard: 'summary_large_image',
-    twitterSite: SITE_TWITTER_HANDLE, // Twitter handle
-    canonical: SITE_URL,
-    themeColor: '#0ea5e9',
-    language: 'ar',
-    image: SITE_IMAGE,
-    author: SITE_AUTHOR.name,
-    keywords: ['growth', 'business', 'platform', 'academy', 'blog', 'contact', 'pricing'],
-    robots: 'index, follow',
-    // Add more SEO options as needed
+    meta: {
+      description: app.description,
+      keywords: app.keywords,
+      twitterCreator: socialMedia.twitter.username,
+      twitterSite: socialMedia.twitter.username,
+      author: identity.name,
+      colorScheme: app.colorScheme,
+      applicationName: app.name,
+    },
+    redirectToCanonicalSiteUrl: true, // Redirect to canonical URL if not matched
   },
 
   // === Additional modules for SEO, OG image generation, sitemap, robots.txt, and schema.org ===
@@ -229,8 +197,6 @@ export default defineNuxtConfig({
 
   // === Sitemap configuration ===
   sitemap: {
-    enabled: true,
-    siteUrl: SITE_URL,
     autoLastmod: true,
     exclude: ['/secret/**'],
     // Add more sitemap options as needed
@@ -238,7 +204,6 @@ export default defineNuxtConfig({
 
   // === Robots.txt configuration ===
   robots: {
-    enabled: true,
     blockAiBots: true,
     groups: [
       {
@@ -246,36 +211,12 @@ export default defineNuxtConfig({
         allow: '/',
       },
     ],
-    sitemap: `${SITE_URL}/sitemap.xml`,
+    sitemap: `/sitemap.xml`,
     // Add more robots options as needed
   },
 
   // === Schema.org structured data for SEO ===
-  schemaOrg: {
-    enabled: true,
-    canonicalHost: SITE_URL,
-    defaultLanguage: 'ar',
-    identity: {
-      name: SITE_NAME,
-      logo: '/favicon.ico',
-      url: SITE_URL,
-      sameAs: [SITE_TWITTER, SITE_FACEBOOK, SITE_LINKEDIN],
-      description: SITE_DESCRIPTION,
-    },
-    organization: {
-      name: SITE_NAME,
-      url: SITE_URL,
-      logo: '/favicon/favicon.ico',
-      description: SITE_DESCRIPTION,
-    },
-    webSite: {
-      name: SITE_NAME,
-      url: SITE_URL,
-      description: SITE_DESCRIPTION,
-      inLanguage: 'ar',
-    },
-    // Add more schema.org options as needed
-  },
+  schemaOrg,
 
   // === Link checker configuration ===
   linkChecker: {

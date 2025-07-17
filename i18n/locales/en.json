@@ -1,3 +1,7 @@
 {
+  "nuxtSiteConfig": {
+    "name": "Growth EN",
+    "description": "Growth is a platform to empower individuals and small businesses online 1111."
+  },
   "welcome": "Welcome!"
 }

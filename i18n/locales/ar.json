@@ -1,3 +1,7 @@
 {
+  "nuxtSiteConfig": {
+    "name": "Growth AR",
+    "description": "Growth is a platform to empower individuals and small businesses online."
+  },
   "welcome": "مرحبا!"
 }
