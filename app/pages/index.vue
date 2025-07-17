@@ -12,5 +12,6 @@
     <DistinguishBrand />
     <Showcase />
     <AddOns />
+    <Partners />
   </div>
 </template>
