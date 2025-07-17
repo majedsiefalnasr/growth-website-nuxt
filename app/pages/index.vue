@@ -10,5 +10,6 @@
     <MobileApp />
     <SellingOnline />
     <DistinguishBrand />
+    <Showcase />
   </div>
 </template>
