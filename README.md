@@ -97,52 +97,7 @@ For full details, see `.github/copilot-instructions.md`.
 
 ## Integrations & Tooling
 
-- **Bootstrap 5**  
-  Popular CSS framework for responsive design.  
-  See [docs/bootstrap-integration.md](docs/bootstrap-integration.md).
-
-- **TypeScript for Vue (`vue-tsc`)**  
-  Type checking and import organization for `.vue` files.  
-  See [docs/vue-tsc-integration.md](docs/vue-tsc-integration.md).
-
-- **ESLint**  
-  Linting for JavaScript/TypeScript code.  
-  See [docs/eslint-integration.md](docs/eslint-integration.md).
-
-- **Prettier**  
-  Code formatting tool integrated with ESLint and Tailwind CSS.  
-  See [docs/prettier-integration.md](docs/prettier-integration.md).
-
-- **@iconify-json/ph**  
-  Phosphor icon set for use with Iconify-compatible icon components.  
-  See [docs/iconify-json-ph-integration.md](docs/iconify-json-ph-integration.md).
-
-- **Nuxt SEO**  
-  SEO optimization for Nuxt applications.  
-  See [docs/nuxtjs-seo-integration.md](docs/nuxtjs-seo-integration.md).
-
-- **Nuxt i18n**
-  Internationalization support for multiple languages.  
-  See [docs/nuxtjs-i18n-integration.md](docs/nuxtjs-i18n-integration.md).
-
-- **lint-staged**  
-  Run linters on pre-committed files.  
-  See [docs/lint-staged-integration.md](docs/lint-staged-integration.md).
-
-- **Husky**  
-  Git hooks for running scripts before commits/pushes.  
-  See [docs/husky-integration.md](docs/husky-integration.md).
-
-- **Cuberto Mouse Follower Integration**  
-  See [docs/mouse-follower-integration.md](./docs/mouse-follower-integration.md).
-
-- **@nuxtjs/color-mode**
-  Dark/light mode support with auto-detection.  
-  See [docs/nuxtjs-color-mode-integration.md](docs/nuxtjs-color-mode-integration.md).
-
-- **SplideJS Vue Integration**
-  Carousel/slider component for Vue.  
-  See [docs/splidejs-vue-integration.md](docs/splidejs-vue-integration.md).
+See the categorized documentation index at [docs/README.md](docs/README.md) for all integrations, developer tooling, and UI/UX enhancements.
 
 ---
 
