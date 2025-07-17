@@ -36,6 +36,19 @@
 - **Comment non-obvious code** and ensure everything is understandable to a mid-level developer.
 - When writing complex logic, **add an inline `# Reason:` comment** explaining the why, not just the what.
 
+#### Documentation File Organization & Naming
+
+- **Categorize all files in `docs/` into these groups:**
+  - Core Integrations (e.g., Bootstrap, Nuxt modules, composables)
+  - Developer Tooling (e.g., ESLint, Prettier, Husky, lint-staged, vue-tsc)
+  - UI & UX Enhancements (e.g., icon sets, mouse follower, carousels)
+- **Remove `-integration` from all documentation file names.**
+- **Use kebab-case for all doc file names, except for special cases (e.g., use-seo-meta-i18n.md).**
+- **Each doc should include a 'See also' section linking to related docs in the same or other categories.**
+- **Create or update `docs/README.md` as a categorized table of contents, listing all docs under their group.**
+- **Update the main project `README.md` to reference `docs/README.md` for the full documentation index.**
+- **When adding a new doc, ensure it is linked in the correct section of `docs/README.md` and cross-linked from related docs.**
+
 ### 🧠 AI Behavior Rules
 
 - **Never assume missing context. Ask questions if uncertain.**
