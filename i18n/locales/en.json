@@ -3,5 +3,12 @@
     "name": "Growth EN",
     "description": "Growth is a platform to empower individuals and small businesses online 1111."
   },
+  "seo": {
+    "index": {
+      "title": "Welcome to Our Website",
+      "description": "Discover amazing content and services on our platform",
+      "keywords": "website, services, platform, amazing"
+    }
+  },
   "welcome": "Welcome!"
 }

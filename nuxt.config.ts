@@ -237,17 +237,17 @@ export default defineNuxtConfig({
     locales: [
       {
         code: 'en',
+        iso: 'en-US',
         language: 'en',
-        label: 'English',
-        langLabel: 'Language',
+        name: 'English',
         file: 'en.json',
         dir: 'ltr',
       },
       {
         code: 'ar',
+        iso: 'ar-EG',
         language: 'ar',
-        label: 'Arabic',
-        langLabel: 'اللغة',
+        name: 'Arabic',
         file: 'ar.json',
         dir: 'rtl',
       },
