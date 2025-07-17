@@ -11,5 +11,6 @@
     <SellingOnline />
     <DistinguishBrand />
     <Showcase />
+    <AddOns />
   </div>
 </template>
