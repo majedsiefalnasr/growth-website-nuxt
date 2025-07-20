@@ -5,7 +5,7 @@
  *
  * @fileoverview Automatically cycles feature items' active state at a given interval.
  */
-import { defineProps, onMounted, onUnmounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 
 /**
  * Props for HeroFutures
