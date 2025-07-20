@@ -14,5 +14,6 @@
     <AddOns />
     <Partners />
     <Blog />
+    <FAQ />
   </div>
 </template>
