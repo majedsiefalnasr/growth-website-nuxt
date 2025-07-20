@@ -23,14 +23,27 @@ watch(
 </script>
 
 <template>
-  <div class="container">
-    <Navbar />
-    <slot />
+  <div>
+    <div class="content">
+      <div class="container">
+        <Navbar />
+        <slot />
+      </div>
+    </div>
+
+    <Footer />
     <FloatingActions />
   </div>
 </template>
 
 <style scoped>
+.content {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 10px 10px #16181b;
+  background-color: var(--root-bg);
+  overflow-x: clip;
+}
 .container {
   opacity: 0;
 }
