@@ -13,5 +13,6 @@
     <Showcase />
     <AddOns />
     <Partners />
+    <Blog />
   </div>
 </template>
