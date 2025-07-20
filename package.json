@@ -46,7 +46,17 @@
     "prettier-plugin-organize-attributes": "^1.0.0",
     "prettier-plugin-organize-imports": "^4.1.0",
     "typescript": "^5.8.3",
-    "vue-tsc": "^3.0.1"
+    "vue-tsc": "^2.2.12"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "vue-tsc"
+      ],
+      "allowedVersions": {
+        "vue-tsc": "*"
+      }
+    }
   },
   "lint-staged": {
     "*.{js,ts,vue}": [
