@@ -15,5 +15,6 @@
     <Partners />
     <Blog />
     <FAQ />
+    <FooterCTA />
   </div>
 </template>
