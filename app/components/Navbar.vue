@@ -90,9 +90,15 @@ onUnmounted(() => {
                 <icon name="ph:translate" />
               </button>
               <ul class="dropdown-menu" aria-labelledby="language-switcher-dropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li>
+                  <NuxtLink class="dropdown-item" to="/lang/ar">العربية</NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink class="dropdown-item" to="/lang/en">English</NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink class="dropdown-item" to="/lang/fr">Français</NuxtLink>
+                </li>
               </ul>
             </div>
             <!-- Sign in -->

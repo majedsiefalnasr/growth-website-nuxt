@@ -55,9 +55,9 @@
             data-scrolled-past-view="false"
           >
             <!-- Action -->
-            <a href="./forms/create-account.html" class="btn btn-primary btn-lg" data-cursor-stick>
+            <NuxtLink to="/forms/create-account" class="btn btn-primary btn-lg" data-cursor-stick>
               أنشئ متجرك الآن
-            </a>
+            </NuxtLink>
             <!-- Note -->
             <p>مجانًا لمدة 14 يوم بدون بطاقة بنكية أو مصاريف خفية</p>
           </div>

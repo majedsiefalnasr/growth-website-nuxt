@@ -134,9 +134,9 @@
         <div>هل لديك أي سؤال؟</div>
 
         <!-- Action -->
-        <a href="./contact.html" class="btn btn-secondary btn-stretch mt-4" data-cursor-stick>
+        <NuxtLink to="/contact" class="btn btn-secondary btn-stretch mt-4" data-cursor-stick>
           تواصل معنا
-        </a>
+        </NuxtLink>
       </div>
     </div>
 

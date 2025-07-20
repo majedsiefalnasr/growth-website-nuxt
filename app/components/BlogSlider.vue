@@ -175,30 +175,31 @@ const splideOptions: Record<string, unknown> = {
   >
     <SplideSlide v-for="(blog, idx) in blogs" :key="idx">
       <!-- Image -->
-      <a :href="blog.url" class="thumbnail" data-cursor-text="عرض المقالة">
+      <NuxtLink :to="blog.url" class="thumbnail" data-cursor-text="عرض المقالة">
         <img :src="blog.image" alt="Blog" />
-      </a>
+      </NuxtLink>
 
       <!-- Content -->
       <div class="content">
         <!-- Categories -->
         <div class="categories">
-          <a
+          <NuxtLink
             v-for="(category, catIdx) in blog.categories"
             :key="catIdx"
             class="item"
-            :href="category.url"
-            >{{ category.name }}
-          </a>
+            :to="category.url"
+          >
+            {{ category.name }}
+          </NuxtLink>
         </div>
 
         <!-- Header -->
         <div class="header">
           <!-- Title -->
           <h3>
-            <a :href="blog.url" class="title stretched-link" data-cursor-text="عرض المقالة">
+            <NuxtLink :to="blog.url" class="title stretched-link" data-cursor-text="عرض المقالة">
               {{ blog.title }}
-            </a>
+            </NuxtLink>
           </h3>
 
           <!-- Subtitle -->

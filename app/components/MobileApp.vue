@@ -44,13 +44,13 @@
       >
         <div class="providers d-flex gap-4 justify-content-center">
           <!-- Google Play -->
-          <a href="#" data-cursor-magnify>
+          <NuxtLink to="#" data-cursor-magnify>
             <img src="/assets/images/apps/google-play.svg" alt="Google Play" />
-          </a>
+          </NuxtLink>
           <!-- App Store -->
-          <a href="#" data-cursor-magnify>
+          <NuxtLink to="#" data-cursor-magnify>
             <img src="/assets/images/apps/app-store.svg" alt="App Store" />
-          </a>
+          </NuxtLink>
         </div>
       </div>
     </div>

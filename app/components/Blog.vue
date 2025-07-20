@@ -47,9 +47,9 @@
         data-scrolled-past-view="false"
       >
         <!-- Action -->
-        <a href="./blog.html" class="btn btn-secondary btn-stretch mt-4" data-cursor-stick>
+        <NuxtLink to="/blog" class="btn btn-secondary btn-stretch mt-4" data-cursor-stick>
           عرض المزيد
-        </a>
+        </NuxtLink>
       </div>
     </div>
   </div>
