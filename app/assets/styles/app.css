@@ -1,3 +1,11 @@
+/* Bootstrap Styles */
+/* Bootstrap LTR Styles */
+@import './plugins/bootstrap/bootstrap.ltr.css';
+/* Bootstrap RTL Styles */
+@import './plugins/bootstrap/bootstrap.rtl.css';
+/* Bootstrap Custom Styles */
+@import './plugins/bootstrap/bootstrap.custom.css';
+
 /* Fonts */
 @import './fonts.css';
 
