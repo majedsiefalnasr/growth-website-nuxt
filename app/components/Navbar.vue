@@ -70,7 +70,11 @@ onUnmounted(() => {
       <!-- Navbar -->
       <div class="d-flex gap-5 align-items-center">
         <!-- Site logo -->
-        <NuxtLink to="/" class="site-logo" aria-label="Growth - your shopping partner">
+        <NuxtLink
+          :to="switchLocalePath(locale)"
+          class="site-logo"
+          aria-label="Growth - your shopping partner"
+        >
           <img src="/assets/images/logo.png" alt="Growth - your shopping partner" />
           <img
             class="symbol"
@@ -108,8 +112,10 @@ onUnmounted(() => {
                 <li v-for="loc in locales" :key="loc.code">
                   <NuxtLink
                     class="dropdown-item"
+                    style="cursor: pointer"
                     :class="{ active: loc.code === locale }"
                     :to="switchLocalePath(loc.code)"
+                    @click="$i18n.setLocale(loc.code)"
                   >
                     {{ loc.name || loc.code.toUpperCase() }}
                   </NuxtLink>
