@@ -6,6 +6,7 @@
  * @module plugins/animation-on-scroll.client
  */
 import { defineNuxtPlugin } from '#app'
+import { useRouter } from 'vue-router'
 
 /**
  * Utility functions for DOM manipulation and viewport checks.
@@ -95,5 +96,12 @@ export default defineNuxtPlugin(() => {
     window.addEventListener('resize', initAnimationOnScroll)
     // Initial run
     window.setTimeout(initAnimationOnScroll, 100)
+
+    // Re-run animation logic after every Nuxt route change (fixes browser back/forward issue)
+    const router = useRouter()
+    router.afterEach(() => {
+      // Timeout ensures DOM is updated before running animation logic
+      setTimeout(initAnimationOnScroll, 100)
+    })
   }
 })
