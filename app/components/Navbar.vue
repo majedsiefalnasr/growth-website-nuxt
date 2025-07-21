@@ -26,7 +26,7 @@ function handleScroll(): void {
 function toggleNavbar(): void {
   isOpen.value = !isOpen.value
   // # Reason: Prevent background scroll when navbar is open (mobile)
-  document.body.style.overflowY = isOpen.value ? 'hidden' : 'auto'
+  document.body.style.overflowY = isOpen.value ? 'hidden' : ''
 }
 
 /**
@@ -44,7 +44,7 @@ onMounted(() => {
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
-  document.body.style.overflowY = 'auto'
+  document.body.style.overflowY = ''
 })
 </script>
 
