@@ -253,7 +253,7 @@ export default defineNuxtConfig({
         code: 'ar',
         iso: 'ar-EG',
         language: 'ar',
-        name: 'Arabic',
+        name: 'العربية',
         file: 'ar.json',
         dir: 'rtl',
       },

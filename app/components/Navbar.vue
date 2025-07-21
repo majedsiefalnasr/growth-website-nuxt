@@ -1,5 +1,20 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue'
+import { useI18n, useSwitchLocalePath } from '#imports'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
+// Language switcher state and helpers
+const { locale, locales } = useI18n()
+const switchLocalePath = useSwitchLocalePath()
+
+/**
+ * Returns the label for the current locale.
+ * @returns {string} The label for the current locale.
+ */
+const currentLocaleLabel = computed(() => {
+  const found = (locales.value as Array<{ code: string; name?: string }>).find(
+    (l) => l.code === locale.value
+  )
+  return found?.name || locale.value.toUpperCase()
+})
 
 /**
  * Handles the navbar open/close and scroll state logic.
@@ -86,18 +101,18 @@ onUnmounted(() => {
                 aria-expanded="false"
                 data-bs-offset="0,20"
               >
-                <span class="text">العربية</span>
+                <span class="text">{{ currentLocaleLabel }}</span>
                 <icon name="ph:translate" />
               </button>
               <ul class="dropdown-menu" aria-labelledby="language-switcher-dropdown">
-                <li>
-                  <NuxtLink class="dropdown-item" to="/lang/ar">العربية</NuxtLink>
-                </li>
-                <li>
-                  <NuxtLink class="dropdown-item" to="/lang/en">English</NuxtLink>
-                </li>
-                <li>
-                  <NuxtLink class="dropdown-item" to="/lang/fr">Français</NuxtLink>
+                <li v-for="loc in locales" :key="loc.code">
+                  <NuxtLink
+                    class="dropdown-item"
+                    :class="{ active: loc.code === locale }"
+                    :to="switchLocalePath(loc.code)"
+                  >
+                    {{ loc.name || loc.code.toUpperCase() }}
+                  </NuxtLink>
                 </li>
               </ul>
             </div>

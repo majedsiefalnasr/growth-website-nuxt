@@ -1,6 +1,9 @@
 <!-- Default layout for Nuxt 4 with Cuberto Mouse Follower integration -->
 <script setup lang="ts">
 // Initialize Cuberto Mouse Follower globally (only once for the app)
+import { useI18n } from '#imports'
+import { computed, watchEffect } from 'vue'
+
 useMouseFollower()
 
 // Auto SEO on every page using this layout
@@ -21,38 +24,24 @@ watch(
   }
 )
 
-/**
- * Returns the current locale code.
- * @returns {string} The current locale code, defaults to 'en'.
- */
-function getCurrentLocale(): string {
-  const { locale } = useI18n()
-  return locale.value || 'en'
-}
-
-/**
- * Returns the direction (ltr/rtl) for the current locale.
- * @returns {"ltr" | "rtl" | "auto"} The direction for the current locale, defaults to 'ltr'.
- */
 type LocaleObject = { code: string; dir?: 'ltr' | 'rtl' | 'auto' }
-function getCurrentLocaleDir(): 'ltr' | 'rtl' | 'auto' {
-  const { locales } = useI18n()
-  const currentLocale = getCurrentLocale()
-  // Accepts dir as string | undefined, fallback to 'ltr' if not set
-  const found = (locales.value as LocaleObject[]).find((locale) => locale.code === currentLocale)
+const { locale, locales } = useI18n()
+
+const currentLocale = computed(() => locale.value || 'en')
+const currentLocaleDir = computed(() => {
+  const found = (locales.value as LocaleObject[]).find((l) => l.code === locale.value)
   return found && (found.dir === 'rtl' || found.dir === 'ltr' || found.dir === 'auto')
     ? found.dir
     : 'ltr'
-}
+})
 
-const currentLocale = getCurrentLocale()
-const currentLocaleDir = getCurrentLocaleDir()
-
-useHead({
-  htmlAttrs: {
-    lang: currentLocale, // Set the default locale
-    dir: currentLocaleDir as 'ltr' | 'rtl' | 'auto', // Set the default direction
-  },
+watchEffect(() => {
+  useHead({
+    htmlAttrs: {
+      lang: currentLocale.value,
+      dir: currentLocaleDir.value as 'ltr' | 'rtl' | 'auto',
+    },
+  })
 })
 </script>
 
