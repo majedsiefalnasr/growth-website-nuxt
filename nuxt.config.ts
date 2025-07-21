@@ -173,7 +173,7 @@ export default defineNuxtConfig({
 
   // === Nuxt SEO: site-wide metadata configuration ===
   site: {
-    url: app.url,
+    url: process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : app.url,
     name: app.title,
   },
 
