@@ -10,5 +10,12 @@
       "keywords": "website, services, platform, amazing"
     }
   },
-  "welcome": "Welcome!"
+  "navbar": {
+    "academy": "Academy",
+    "pricing": "Pricing",
+    "blog": "Blog",
+    "contact": "Contact Us",
+    "signin": "Sign In",
+    "createStore": "Create Your Store Now"
+  }
 }

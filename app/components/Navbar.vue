@@ -84,10 +84,18 @@ onUnmounted(() => {
         </NuxtLink>
         <!-- Main navbar -->
         <div class="d-flex navbar-main-list">
-          <NuxtLink to="/academy" class="nav-link" data-cursor-magnify-sm>الاكاديمية</NuxtLink>
-          <NuxtLink to="/pricing" class="nav-link" data-cursor-magnify-sm>الباقات</NuxtLink>
-          <NuxtLink to="/blog" class="nav-link" data-cursor-magnify-sm>المدونة</NuxtLink>
-          <NuxtLink to="/contact" class="nav-link" data-cursor-magnify-sm>تواصل معنا</NuxtLink>
+          <NuxtLink to="/academy" class="nav-link" data-cursor-magnify-sm>{{
+            $t('navbar.academy')
+          }}</NuxtLink>
+          <NuxtLink to="/pricing" class="nav-link" data-cursor-magnify-sm>{{
+            $t('navbar.pricing')
+          }}</NuxtLink>
+          <NuxtLink to="/blog" class="nav-link" data-cursor-magnify-sm>{{
+            $t('navbar.blog')
+          }}</NuxtLink>
+          <NuxtLink to="/contact" class="nav-link" data-cursor-magnify-sm>{{
+            $t('navbar.contact')
+          }}</NuxtLink>
         </div>
       </div>
       <!-- Actions -->
@@ -123,9 +131,9 @@ onUnmounted(() => {
               </ul>
             </div>
             <!-- Sign in -->
-            <NuxtLink to="/forms/signin-account" class="btn btn-primary" data-cursor-stick
-              >تسجيل دخول</NuxtLink
-            >
+            <NuxtLink to="/forms/signin-account" class="btn btn-primary" data-cursor-stick>
+              {{ $t('navbar.signin') }}
+            </NuxtLink>
           </div>
           <!-- Create store -->
           <NuxtLink
@@ -133,7 +141,7 @@ onUnmounted(() => {
             class="btn btn-primary create-store"
             data-cursor-stick
           >
-            أنشئ متجرك الآن
+            {{ $t('navbar.createStore') }}
           </NuxtLink>
         </div>
         <!-- Mobile nav toggler -->
