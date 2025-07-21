@@ -15,6 +15,7 @@
 }
 
 html, body {
+  overflow: unset !important;
   height: 100%;
 }
 
