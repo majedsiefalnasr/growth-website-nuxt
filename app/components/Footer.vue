@@ -184,6 +184,9 @@
   pointer-events: none;
   content: '';
 }
+[dir='ltr'] .footer-block .links-list .links .link.external:after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 256 256'%3E%3C!-- Icon from Phosphor by Phosphor Icons - https://github.com/phosphor-icons/core/blob/main/LICENSE --%3E%3Cpath fill='white' d='M200 64v104a8 8 0 0 1-16 0V83.31L69.66 197.66a8 8 0 0 1-11.32-11.32L172.69 72H88a8 8 0 0 1 0-16h104a8 8 0 0 1 8 8'/%3E%3C/svg%3E");
+}
 .footer-block .links-list .links .link.external:hover:after {
   opacity: 1;
   margin-right: 0.5rem;
