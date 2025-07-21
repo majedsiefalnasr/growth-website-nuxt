@@ -120,7 +120,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: -1;
+  z-index: 0;
   background-color: var(--brand-900);
   padding: 14.5rem 0 7rem;
   color: var(--brand-white);

@@ -95,6 +95,7 @@ onUnmounted(() => {
 #floating-actions {
   transform: translateY(7.5rem);
   opacity: 0;
+  z-index: 1;
   pointer-events: none;
 }
 #floating-actions.view {
