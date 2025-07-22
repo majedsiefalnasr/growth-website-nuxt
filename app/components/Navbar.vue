@@ -4,6 +4,7 @@ import { computed, onMounted, onUnmounted, ref } from 'vue'
 // Language switcher state and helpers
 const { locale, locales } = useI18n()
 const switchLocalePath = useSwitchLocalePath()
+const localePath = useLocalePath()
 
 /**
  * Returns the label for the current locale.
@@ -71,7 +72,7 @@ onUnmounted(() => {
       <div class="d-flex gap-5 align-items-center">
         <!-- Site logo -->
         <NuxtLink
-          :to="switchLocalePath(locale)"
+          :to="localePath({ name: 'index' })"
           class="site-logo"
           aria-label="Growth - your shopping partner"
         >
