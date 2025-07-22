@@ -1,6 +1,4 @@
-<script setup lang="ts">
-// Reason: This is the main landing page for the Nuxt 4 app structure.
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div>
@@ -15,6 +13,5 @@
     <Partners />
     <Blog />
     <FAQ />
-    <FooterCTA />
   </div>
 </template>

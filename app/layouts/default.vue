@@ -51,6 +51,7 @@ watchEffect(() => {
       <div class="container">
         <Navbar />
         <slot />
+        <FooterCTA />
       </div>
     </div>
 
