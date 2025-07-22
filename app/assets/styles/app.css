@@ -29,3 +29,8 @@
 
 /* Splide.js Styles */
 @import './plugins/splide.min.css';
+
+/* Custom Styles */
+em.icon {
+  line-height: 100%;
+}
