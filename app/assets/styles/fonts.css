@@ -3,6 +3,8 @@
   font-style: normal;
   font-weight: 500;
   src:
+    local('STC Forward Medium'),
+    local('STCForward-Medium'),
     url('/assets/fonts/stc-forward/STCForward-Medium.woff2') format('woff2'),
     url('/assets/fonts/stc-forward/STCForward-Medium.woff') format('woff');
   font-family: 'STC Forward';
@@ -13,6 +15,8 @@
   font-style: normal;
   font-weight: normal;
   src:
+    local('STC Forward Regular'),
+    local('STCForward-Regular'),
     url('/assets/fonts/stc-forward/STCForward-Regular.woff2') format('woff2'),
     url('/assets/fonts/stc-forward/STCForward-Regular.woff') format('woff');
   font-family: 'STC Forward';
@@ -23,8 +27,97 @@
   font-style: normal;
   font-weight: bold;
   src:
+    local('STC Forward Bold'),
+    local('STCForward-Bold'),
     url('/assets/fonts/stc-forward/STCForward-Bold.woff2') format('woff2'),
     url('/assets/fonts/stc-forward/STCForward-Bold.woff') format('woff');
   font-family: 'STC Forward';
+  font-display: swap;
+}
+
+/* Neo Sans */
+@font-face {
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local('Neo Sans Medium'),
+    local('NeoSans-Medium'),
+    url('/assets/fonts/neo-sans/NeoSans-Medium.woff2') format('woff2'),
+    url('/assets/fonts/neo-sans/NeoSans-Medium.woff') format('woff');
+  font-family: 'Neo Sans';
+  font-display: swap;
+}
+
+/* Neo Sans Arabic */
+@font-face {
+  font-style: normal;
+  font-weight: bold;
+  src:
+    local('Neo Sans Arabic Bold'),
+    local('NeoSansArabic-Bold'),
+    url('/assets/fonts/neo-sans/arabic/NeoSansArabic-Bold.woff2') format('woff2'),
+    url('/assets/fonts/neo-sans/arabic/NeoSansArabic-Bold.woff') format('woff');
+  font-family: 'Neo Sans Arabic';
+  font-display: swap;
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 900;
+  src:
+    local('Neo Sans Arabic Black'),
+    local('NeoSansArabic-Black'),
+    url('NeoSansArabic-Black.woff2') format('woff2'),
+    url('/assets/fonts/neo-sans/arabic/NeoSansArabic-Black.woff') format('woff');
+  font-family: 'Neo Sans Arabic';
+  font-display: swap;
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: normal;
+  src:
+    local('Neo Sans Arabic Regular'),
+    local('NeoSansArabic'),
+    url('/assets/fonts/neo-sans/arabic/NeoSansArabic.woff2') format('woff2'),
+    url('/assets/fonts/neo-sans/arabic/NeoSansArabic.woff') format('woff');
+  font-family: 'Neo Sans Arabic';
+  font-display: swap;
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local('Neo Sans Arabic Medium'),
+    local('NeoSansArabic-Medium'),
+    url('/assets/fonts/neo-sans/arabic/NeoSansArabic-Medium.woff2') format('woff2'),
+    url('/assets/fonts/neo-sans/arabic/NeoSansArabic-Medium.woff') format('woff');
+  font-family: 'Neo Sans Arabic';
+  font-display: swap;
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 300;
+  src:
+    local('Neo Sans Arabic Light'),
+    local('NeoSansArabic-Light'),
+    url('/assets/fonts/neo-sans/arabic/NeoSansArabic-Light.woff2') format('woff2'),
+    url('/assets/fonts/neo-sans/arabic/NeoSansArabic-Light.woff') format('woff');
+  font-family: 'Neo Sans Arabic';
+  font-display: swap;
+}
+
+/* Neo Sans Arabic Ultra */
+@font-face {
+  font-style: normal;
+  font-weight: 900;
+  src:
+    local('Neo Sans Arabic Ultra'),
+    local('NeoSansArabic-Ultra'),
+    url('/assets/fonts/neo-sans/arabic-ultra/NeoSansArabic-Ultra.woff2') format('woff2'),
+    url('/assets/fonts/neo-sans/arabic-ultra/NeoSansArabic-Ultra.woff') format('woff');
+  font-family: 'Neo Sans Arabic Ultra';
   font-display: swap;
 }
