@@ -68,7 +68,4 @@ watchEffect(() => {
   background-color: var(--root-bg);
   overflow-x: clip;
 }
-.container {
-  opacity: 0;
-}
 </style>
