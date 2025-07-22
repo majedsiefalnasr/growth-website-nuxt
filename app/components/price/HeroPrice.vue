@@ -264,8 +264,8 @@ const plansClass = computed(() => ({
           </div>
 
           <!-- View compare table action -->
-          <a
-            href="./price-features.html"
+          <NuxtLink
+            to="/pricing/features"
             class="compare"
             data-cursor-magnify-sm
             data-reveal-self="translate-up"
@@ -274,8 +274,7 @@ const plansClass = computed(() => ({
             data-reveal-delay="2"
           >
             قارن بين الخطط
-            <em class="ph-icon-caretdown"></em>
-          </a>
+          </NuxtLink>
 
           <!-- Taxes notes -->
           <div
