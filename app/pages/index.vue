@@ -3,7 +3,7 @@
 <template>
   <div>
     <PageLoader />
-    <HeroBlock />
+    <Hero />
     <Testimonials />
     <MobileApp />
     <SellingOnline />
