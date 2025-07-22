@@ -41,8 +41,21 @@ function handleScroll(): void {
  */
 function toggleNavbar(): void {
   isOpen.value = !isOpen.value
-  // # Reason: Prevent background scroll when navbar is open (mobile)
-  document.body.style.overflowY = isOpen.value ? 'hidden' : ''
+  // # Reason: Prevent background scroll when navbar is open (mobile) without scrolling to top
+  if (isOpen.value) {
+    // Store current scroll position
+    const scrollY = window.scrollY
+    document.body.style.position = 'fixed'
+    document.body.style.top = `-${scrollY}px`
+    document.body.dataset.scrollY = String(scrollY)
+  } else {
+    // Restore scroll position
+    const scrollY = document.body.dataset.scrollY
+    document.body.style.position = ''
+    document.body.style.top = ''
+    window.scrollTo(0, scrollY ? Number(scrollY) : 0)
+    delete document.body.dataset.scrollY
+  }
 }
 
 /**
@@ -296,14 +309,7 @@ onUnmounted(() => {
   display: flex;
 }
 .navbar .navbar-main .actions > .inner-actions > *:not(.create-store) {
-  display: none;
-}
-.navbar.open .navbar-main .actions > .inner-actions > *:not(.create-store) {
-  display: flex;
-}
-.navbar.open .navbar-main .actions > .inner-actions > .create-store,
-.navbar.open .navbar-main .actions > .inner-actions > *:not(.create-store) > *:not(.dropdown) {
-  display: none;
+  display: none !important;
 }
 .navbar.open:not(.is-scrolled)
   .navbar-main
@@ -464,11 +470,11 @@ onUnmounted(() => {
   }
   .navbar .navbar-main .actions > *:not(.toggler),
   .navbar .navbar-main .actions > .inner-actions > *:not(.create-store) {
-    display: flex;
+    display: flex !important;
   }
   .navbar .navbar-main .actions > .toggler,
   .navbar .navbar-main .actions > .inner-actions > .create-store {
-    display: none;
+    display: none !important;
   }
 }
 
