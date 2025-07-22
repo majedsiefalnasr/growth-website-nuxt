@@ -475,14 +475,6 @@ const plansClass = computed(() => ({
   font-weight: 700;
   font-size: 1.75rem;
 }
-.price-block .plans > .item .content {
-  transition: all 0.3s ease-in-out;
-  height: 0;
-  overflow: hidden;
-}
-.price-block .plans > .item.active .content {
-  height: auto;
-}
 .price-block .plans > .item .content .description {
   margin-bottom: 0.5rem;
 }
