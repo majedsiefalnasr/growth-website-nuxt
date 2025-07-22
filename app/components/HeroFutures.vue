@@ -25,20 +25,17 @@ const features = [
   {
     image: '/assets/images/future-ex.png',
     icon: 'ph:gear',
-    label: 'No design or coding experience required',
-    text: 'لا حاجه لخبره بالتصميم او البرمجة',
+    textKey: 'heroFutures.feature1',
   },
   {
     image: '/assets/images/future-ex2.png',
     icon: 'ph:translate',
-    label: 'All features included',
-    text: 'جميع المزايا مضمنة',
+    textKey: 'heroFutures.feature2',
   },
   {
     image: '/assets/images/future-ex3.png',
     icon: 'ph:device-mobile-camera',
-    label: 'Premium support',
-    text: 'دعم فني مميز',
+    textKey: 'heroFutures.feature3',
   },
 ]
 
@@ -101,12 +98,12 @@ onUnmounted(() => {
   >
     <div
       v-for="(feature, idx) in features"
-      :key="feature.label"
+      :key="feature.textKey"
       class="item"
       :class="{ active: idx === activeIndex }"
       :style="`background-image: url(${feature.image})`"
       role="listitem"
-      :aria-label="feature.label"
+      :aria-label="$t(feature.textKey)"
       tabindex="0"
       :aria-pressed="idx === activeIndex"
       @click="handleClick(idx)"
@@ -117,7 +114,7 @@ onUnmounted(() => {
         <div class="icon">
           <Icon :name="feature.icon" />
         </div>
-        <h3 tabindex="0">{{ feature.text }}</h3>
+        <h3 tabindex="0">{{ $t(feature.textKey) }}</h3>
       </div>
     </div>
   </div>

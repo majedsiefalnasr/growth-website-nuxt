@@ -17,5 +17,18 @@
     "contact": "Contact Us",
     "signin": "Sign In",
     "createStore": "Create Your Store Now"
+  },
+  "heroBlock": {
+    "headline1": "Start Your E-commerce Business",
+    "headline2": "In Less Than 5 Minutes",
+    "description": "Easily transition to e-commerce and own your online store with all the features of e-commerce, along with supporting services and 24/7 technical support.",
+    "watchHow": "Watch How It Works",
+    "registerCta": "Create Your Store Now",
+    "registerNote": "Free for 14 days without a credit card or hidden fees"
+  },
+  "heroFutures": {
+    "feature1": "No design or coding experience required",
+    "feature2": "All features included",
+    "feature3": "Premium support"
   }
 }

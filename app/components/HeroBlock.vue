@@ -21,8 +21,8 @@
             data-scrolled-into-view="false"
             data-scrolled-past-view="false"
           >
-            <span>ابدأ تجارتك الإلكترونية</span>
-            <span>في اقل من 5 دقائق</span>
+            <span>{{ $t('heroBlock.headline1') }}</span>
+            <span>{{ $t('heroBlock.headline2') }}</span>
           </h1>
 
           <div
@@ -31,8 +31,7 @@
             data-scrolled-into-view="false"
             data-scrolled-past-view="false"
           >
-            تحول إلى التجارة الالكترونية بسهولة و سرعة و أمتلك متجر إلكتروني خاص بك بجميع مزايا
-            التجارة الإلكترونية مع توفير الخدمات المساندة له ودعم فنى على مدار الساعة
+            {{ $t('heroBlock.description') }}
           </div>
 
           <!-- Introduction video - play -->
@@ -44,7 +43,7 @@
             data-scrolled-past-view="false"
           >
             <Icon name="ph:play-circle-fill" />
-            <span>شاهد كيف تعمل</span>
+            <span>{{ $t('heroBlock.watchHow') }}</span>
           </button>
 
           <!-- Register action -->
@@ -56,10 +55,10 @@
           >
             <!-- Action -->
             <NuxtLink to="/forms/create-account" class="btn btn-primary btn-lg" data-cursor-stick>
-              أنشئ متجرك الآن
+              {{ $t('heroBlock.registerCta') }}
             </NuxtLink>
             <!-- Note -->
-            <p>مجانًا لمدة 14 يوم بدون بطاقة بنكية أو مصاريف خفية</p>
+            <p>{{ $t('heroBlock.registerNote') }}</p>
           </div>
         </div>
       </div>
