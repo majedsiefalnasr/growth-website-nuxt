@@ -76,7 +76,7 @@ onUnmounted(() => {
       aria-label="Share"
       @click="onShare"
     >
-      <Icon name="ph:share-network" />
+      <em class="icon"><Icon name="ph:share-network" /></em>
     </button>
 
     <!-- Back to top -->
@@ -86,7 +86,7 @@ onUnmounted(() => {
       aria-label="Back to top"
       @click="onBackToTop"
     >
-      <Icon name="ph:caret-up" />
+      <em class="icon"><Icon name="ph:caret-up" /></em>
     </button>
   </div>
 </template>
@@ -103,11 +103,11 @@ onUnmounted(() => {
   opacity: 1 !important;
   pointer-events: auto;
 }
-button {
+#floating-actions button {
   width: 3rem;
   height: 3rem;
 }
-button:hover {
+#floating-actions button:hover {
   transform: none !important;
 }
 </style>

@@ -82,23 +82,23 @@
           <div class="sm-links justify-content-center mb-5 mt-4">
             <!-- Facebook -->
             <a href="#" class="btn">
-              <em class="usg-icon-facebook"></em>
+              <em class="icon"><Icon name="ri:facebook-fill" /></em>
             </a>
             <!-- Youtube -->
             <a href="#" class="btn">
-              <em class="usg-icon-youtube"></em>
+              <em class="icon"><Icon name="ri:youtube-fill" /></em>
             </a>
             <!-- Google -->
             <a href="#" class="btn">
-              <em class="usg-icon-google"></em>
+              <em class="icon"><Icon name="ri:google-fill" /></em>
             </a>
             <!-- Instagram -->
             <a href="#" class="btn">
-              <em class="usg-icon-instagram"></em>
+              <em class="icon"><Icon name="ri:instagram-line" /></em>
             </a>
             <!-- Whatsapp -->
             <a href="#" class="btn">
-              <em class="usg-icon-whatsapp"></em>
+              <em class="icon"><Icon name="ri:whatsapp-line" /></em>
             </a>
           </div>
 
@@ -265,5 +265,26 @@
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
+}
+
+.sm-links {
+  display: flex;
+  gap: 1rem;
+}
+.sm-links > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--brand-800);
+  padding: 0;
+  width: 3rem;
+  height: 3rem;
+  color: var(--brand-white) !important;
+  font-size: 24px;
+}
+.sm-links > *:hover {
+  background-color: var(--brand-white);
+  color: var(--brand-800) !important;
 }
 </style>
