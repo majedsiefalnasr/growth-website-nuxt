@@ -324,10 +324,15 @@
 }
 [dir='ltr'] .modal-header .modal-title .icon,
 [dir='rtl'] .modal-header .modal-title .icon {
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   background-color: var(--brand-200);
   padding: 0.75rem;
-  font-size: 2rem;
+  width: 56px;
+  height: 56px;
 }
 [dir='ltr'] .modal-body,
 [dir='rtl'] .modal-body {
