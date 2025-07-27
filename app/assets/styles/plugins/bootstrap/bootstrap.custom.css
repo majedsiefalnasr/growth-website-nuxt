@@ -117,22 +117,25 @@
 }
 [dir='ltr'] .btn.btn-back:before,
 [dir='rtl'] .btn.btn-back:before {
+  display: inline-block;
   position: absolute;
   top: 50%;
   right: 1rem;
   transform: translateY(-50%);
-  content: '\e038';
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 400;
-  line-height: 1;
-  font-family: 'phosphor';
-  text-rendering: auto;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
   transition: all 0.3s ease-in-out;
+  background-color: currentColor;
+  width: 1em;
+  height: 1em;
   pointer-events: none;
+  content: '';
   font-size: 1rem;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 256 256'%3E%3C!-- Icon from Phosphor by Phosphor Icons - https://github.com/phosphor-icons/core/blob/main/LICENSE --%3E%3Cpath fill='currentColor' d='m181.66 133.66l-80 80a8 8 0 0 1-11.32-11.32L164.69 128L90.34 53.66a8 8 0 0 1 11.32-11.32l80 80a8 8 0 0 1 0 11.32'/%3E%3C/svg%3E");
 }
 [dir='ltr'] .btn.btn-back:hover:before,
 [dir='rtl'] .btn.btn-back:hover:before,
