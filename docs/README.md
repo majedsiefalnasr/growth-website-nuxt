@@ -3,6 +3,7 @@
 ## Core Integrations
 
 - [Bootstrap 5](./core/bootstrap.md)
+- [AnchorJS](../anchor-js.md)
 - [Nuxt Color Mode](./core/nuxtjs-color-mode.md)
 - [Nuxt i18n](./core/nuxtjs-i18n.md)
 - [Nuxt SEO](./core/nuxtjs-seo.md)
