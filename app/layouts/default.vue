@@ -7,8 +7,9 @@ import { computed, watchEffect } from 'vue'
 useMouseFollower()
 
 // Auto SEO on every page using this layout
+const { setSeo } = useSeoMetaI18n()
+
 onMounted(() => {
-  const { setSeo } = useSeoMetaI18n()
   setSeo()
 })
 
@@ -18,7 +19,6 @@ watch(
   () => route.path,
   () => {
     nextTick(() => {
-      const { setSeo } = useSeoMetaI18n()
       setSeo()
     })
   }
