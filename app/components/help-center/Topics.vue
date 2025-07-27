@@ -24,19 +24,19 @@
             <h3>كيف تبدأ</h3>
 
             <!-- Thumbnail -->
-            <a href="./help-center-category.html" data-cursor-hidden>
+            <NuxtLink to="/help-center/category" data-cursor-hidden>
               <img src="/assets/images/help-center/help-center-ex1.png" alt="Help Center example" />
-            </a>
+            </NuxtLink>
 
             <!-- Links -->
             <div class="links">
-              <a href="./help-center-topic.html" class="link">كيف تبدأ</a>
-              <a href="./help-center-topic.html" class="link">حل المشكلات الفنية</a>
-              <a href="./help-center-topic.html" class="link">الاتصال بخدمة عملاء Growth</a>
+              <NuxtLink to="/help-center/topic" class="link">كيف تبدأ</NuxtLink>
+              <NuxtLink to="/help-center/topic" class="link">حل المشكلات الفنية</NuxtLink>
+              <NuxtLink to="/help-center/topic" class="link">الاتصال بخدمة عملاء Growth</NuxtLink>
             </div>
 
             <!-- Action -->
-            <a href="./help-center-category.html" class="btn">عرض الكل</a>
+            <NuxtLink to="/help-center/category" class="btn">عرض الكل</NuxtLink>
           </div>
 
           <div
@@ -50,19 +50,19 @@
             <h3>محرر Growth</h3>
 
             <!-- Thumbnail -->
-            <a href="./help-center-category.html" data-cursor-hidden>
+            <NuxtLink to="/help-center/category" data-cursor-hidden>
               <img src="/assets/images/help-center/help-center-ex2.png" alt="Help Center example" />
-            </a>
+            </NuxtLink>
 
             <!-- Links -->
             <div class="links">
-              <a href="./help-center-topic.html" class="link">أساسيات المحرر</a>
-              <a href="./help-center-topic.html" class="link">استخدام المحرر الخاص بك</a>
-              <a href="./help-center-topic.html" class="link">سؤال وجواب</a>
+              <NuxtLink to="/help-center/topic" class="link">أساسيات المحرر</NuxtLink>
+              <NuxtLink to="/help-center/topic" class="link">استخدام المحرر الخاص بك</NuxtLink>
+              <NuxtLink to="/help-center/topic" class="link">سؤال وجواب</NuxtLink>
             </div>
 
             <!-- Action -->
-            <a href="./help-center-category.html" class="btn">عرض الكل</a>
+            <NuxtLink to="/help-center/category" class="btn">عرض الكل</NuxtLink>
           </div>
           <div
             class="item"
@@ -75,19 +75,19 @@
             <h3>الفواتير</h3>
 
             <!-- Thumbnail -->
-            <a href="./help-center-category.html" data-cursor-hidden>
+            <NuxtLink to="/help-center/category" data-cursor-hidden>
               <img src="/assets/images/help-center/help-center-ex3.png" alt="Help Center example" />
-            </a>
+            </NuxtLink>
 
             <!-- Links -->
             <div class="links">
-              <a href="./help-center-topic.html" class="link">الخطط المميزة</a>
-              <a href="./help-center-topic.html" class="link">الترقية إلى خطة بريميوم</a>
-              <a href="./help-center-topic.html" class="link">الترقيات والقسائم</a>
+              <NuxtLink to="/help-center/topic" class="link">الخطط المميزة</NuxtLink>
+              <NuxtLink to="/help-center/topic" class="link">الترقية إلى خطة بريميوم</NuxtLink>
+              <NuxtLink to="/help-center/topic" class="link">الترقيات والقسائم</NuxtLink>
             </div>
 
             <!-- Action -->
-            <a href="./help-center-category.html" class="btn">عرض الكل</a>
+            <NuxtLink to="/help-center/category" class="btn">عرض الكل</NuxtLink>
           </div>
           <div
             class="item"
@@ -100,19 +100,19 @@
             <h3>إدارة موقعك</h3>
 
             <!-- Thumbnail -->
-            <a href="./help-center-category.html" data-cursor-hidden>
+            <NuxtLink to="/help-center/category" data-cursor-hidden>
               <img src="/assets/images/help-center/help-center-ex4.png" alt="Help Center example" />
-            </a>
+            </NuxtLink>
 
             <!-- Links -->
             <div class="links">
-              <a href="./help-center-topic.html" class="link">استخدام لوحة تحكم الموقع</a>
-              <a href="./help-center-topic.html" class="link">إدارة الموقع</a>
-              <a href="./help-center-topic.html" class="link">الأدوار والأذونات</a>
+              <NuxtLink to="/help-center/topic" class="link">استخدام لوحة تحكم الموقع</NuxtLink>
+              <NuxtLink to="/help-center/topic" class="link">إدارة الموقع</NuxtLink>
+              <NuxtLink to="/help-center/topic" class="link">الأدوار والأذونات</NuxtLink>
             </div>
 
             <!-- Action -->
-            <a href="./help-center-category.html" class="btn">عرض الكل</a>
+            <NuxtLink to="/help-center/category" class="btn">عرض الكل</NuxtLink>
           </div>
           <div
             class="item"
@@ -125,19 +125,19 @@
             <h3>محرر الجوال</h3>
 
             <!-- Thumbnail -->
-            <a href="./help-center-category.html" data-cursor-hidden>
+            <NuxtLink to="/help-center/category" data-cursor-hidden>
               <img src="/assets/images/help-center/help-center-ex5.png" alt="Help Center example" />
-            </a>
+            </NuxtLink>
 
             <!-- Links -->
             <div class="links">
-              <a href="./help-center-topic.html" class="link">كيف تبدأ</a>
-              <a href="./help-center-topic.html" class="link">أدوات الجوال</a>
-              <a href="./help-center-topic.html" class="link">الصفحات على الجوال</a>
+              <NuxtLink to="/help-center/topic" class="link">كيف تبدأ</NuxtLink>
+              <NuxtLink to="/help-center/topic" class="link">أدوات الجوال</NuxtLink>
+              <NuxtLink to="/help-center/topic" class="link">الصفحات على الجوال</NuxtLink>
             </div>
 
             <!-- Action -->
-            <a href="./help-center-category.html" class="btn">عرض الكل</a>
+            <NuxtLink to="/help-center/category" class="btn">عرض الكل</NuxtLink>
           </div>
           <div
             class="item"
@@ -150,19 +150,19 @@
             <h3>الأداء والمشكلات الفنية</h3>
 
             <!-- Thumbnail -->
-            <a href="./help-center-category.html" data-cursor-hidden>
+            <NuxtLink to="/help-center/category" data-cursor-hidden>
               <img src="/assets/images/help-center/help-center-ex6.png" alt="Help Center example" />
-            </a>
+            </NuxtLink>
 
             <!-- Links -->
             <div class="links">
-              <a href="./help-center-topic.html" class="link">أداء الموقع</a>
-              <a href="./help-center-topic.html" class="link">مشاكل المحرر</a>
-              <a href="./help-center-topic.html" class="link">مشاكل الموقع المباشر </a>
+              <NuxtLink to="/help-center/topic" class="link">أداء الموقع</NuxtLink>
+              <NuxtLink to="/help-center/topic" class="link">مشاكل المحرر</NuxtLink>
+              <NuxtLink to="/help-center/topic" class="link">مشاكل الموقع المباشر</NuxtLink>
             </div>
 
             <!-- Action -->
-            <a href="./help-center-category.html" class="btn">عرض الكل</a>
+            <NuxtLink to="/help-center/category" class="btn">عرض الكل</NuxtLink>
           </div>
         </div>
 
@@ -282,81 +282,6 @@
 .help-center-topics-block .side--nav > .btn:hover em {
   right: 0.75rem;
 }
-.help-center-topics-block .side--nav .topic--nav {
-  display: flex;
-  flex-direction: column;
-}
-.help-center-topics-block .side--nav .topic--nav h3 {
-  margin-bottom: 0;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-.help-center-topics-block .side--nav .topic--nav [links-toggler].open [open],
-.help-center-topics-block .side--nav .topic--nav [links-toggler]:not(.open) [close] {
-  display: none;
-}
-.help-center-topics-block .side--nav .topic--nav .links {
-  transition: all 0.6s ease-in-out;
-  max-height: 0;
-  overflow: hidden;
-}
-.help-center-topics-block .side--nav .topic--nav .links.open {
-  max-height: 2000px;
-}
-.help-center-topics-block .side--nav .topic--nav .links > .content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin-top: 1.5rem;
-  width: 100%;
-}
-.help-center-topics-block .side--nav .topic--nav .links .content > * {
-  position: relative;
-  transition: all 0.3s ease-in-out;
-  border: 2px solid var(--brand-white);
-  border-radius: 1.13rem;
-  background-color: var(--brand-white);
-  padding: 0.75rem 1.5rem 0.75rem 3rem;
-  color: inherit;
-  font-weight: 400;
-  text-decoration: none;
-}
-.help-center-topics-block .side--nav .topic--nav .links .content > *:before {
-  position: absolute;
-  top: 50%;
-  left: 1.5rem;
-  transform: translateY(-50%);
-  -webkit-mask-image: var(--svg);
-  mask-image: var(--svg);
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  background-color: currentColor;
-  width: 1em;
-  height: 1em;
-  pointer-events: none;
-  pointer-events: none;
-  content: '';
-  content: '';
-  font-size: 1rem;
-  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 256 256'%3E%3C!-- Icon from Phosphor by Phosphor Icons - https://github.com/phosphor-icons/core/blob/main/LICENSE --%3E%3Cpath fill='currentColor' d='M165.66 202.34a8 8 0 0 1-11.32 11.32l-80-80a8 8 0 0 1 0-11.32l80-80a8 8 0 0 1 11.32 11.32L91.31 128Z'/%3E%3C/svg%3E");
-}
-.help-center-topics-block .side--nav .topic--nav .links .content > *:hover,
-.help-center-topics-block .side--nav .topic--nav .links .content > *:active,
-.help-center-topics-block .side--nav .topic--nav .links .content > *.active {
-  border-color: var(--brand-500);
-}
-.help-center-topics-block .side--nav .topic--nav .links .content > *.active {
-  pointer-events: none;
-}
-.help-center-topics-block .side--nav .topic--nav .links .content > *:hover:before,
-.help-center-topics-block .side--nav .topic--nav .links .content > *:active:before,
-.help-center-topics-block .side--nav .topic--nav .links .content > *.active:before {
-  left: 1rem;
-}
 .help-center-topics-block .topic--category-content h4 {
   margin-bottom: 2rem;
   font-weight: 700;
@@ -447,9 +372,6 @@
   }
   .help-center-topics-block {
     margin-bottom: 12.5rem;
-  }
-  .help-center-topics-block .side--nav .topic--nav .links {
-    max-height: 2000px;
   }
 }
 
