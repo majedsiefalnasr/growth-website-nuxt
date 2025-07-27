@@ -154,3 +154,106 @@ body > *:not(.tooltip):not(.modal-backdrop):not(.modal):not(.g-cursor) {
 .ltr {
   direction: ltr;
 }
+
+/* Link */
+a.underline {
+  transition: color 0.3s ease-in-out;
+  will-change: background-position;
+  border-bottom: 1px solid var(--brand-900);
+  background-image: linear-gradient(
+    to top,
+    transparent 0%,
+    transparent 50%,
+    var(--brand-500) 50%,
+    var(--brand-500) 100%
+  );
+  background-position: 0 100%;
+  background-size: 100% 200%;
+  color: var(--brand-900);
+  text-decoration: none;
+}
+a.underline:hover {
+  -webkit-animation: backgroundAnimateIn 0.3s;
+  animation: backgroundAnimateIn 0.3s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+@-webkit-keyframes backgroundAnimateIn {
+  0% {
+    background-position: 0 -100%;
+  }
+  63% {
+    background-position: 0 2.5%;
+  }
+  86% {
+    background-position: 0 -20%;
+  }
+  100% {
+    background-position: 0 0%;
+    color: var(--brand-white);
+  }
+}
+@keyframes backgroundAnimateIn {
+  0% {
+    background-position: 0 -100%;
+  }
+  63% {
+    background-position: 0 2.5%;
+  }
+  86% {
+    background-position: 0 -20%;
+  }
+  100% {
+    background-position: 0 0%;
+    color: var(--brand-white);
+  }
+}
+a.magnify {
+  color: var(--brand-600);
+  text-decoration: none;
+}
+
+/* AnchorJS Link */
+.anchorjs-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.25s linear;
+  margin-right: 0.5em !important;
+  margin-left: 0em !important;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  padding-right: 0em !important;
+  padding-left: 0em !important;
+  width: 1.5em;
+  height: 1.5em;
+  color: inherit;
+  font-size: 0.75em;
+}
+:hover > .anchorjs-link {
+  opacity: 1;
+}
+.anchorjs-link:hover {
+  background-color: var(--brand-100);
+  color: var(--brand-500);
+}
+.anchorjs-link:after {
+  display: inline-block;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  background-color: var(--brand-500);
+  width: 0.8em;
+  height: 0.8em;
+  content: '';
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 256 256'%3E%3C!-- Icon from Phosphor by Phosphor Icons - https://github.com/phosphor-icons/core/blob/main/LICENSE --%3E%3Cpath fill='currentColor' d='M165.66 90.34a8 8 0 0 1 0 11.32l-64 64a8 8 0 0 1-11.32-11.32l64-64a8 8 0 0 1 11.32 0M215.6 40.4a56 56 0 0 0-79.2 0l-30.06 30.05a8 8 0 0 0 11.32 11.32l30.06-30a40 40 0 0 1 56.57 56.56l-30.07 30.06a8 8 0 0 0 11.31 11.32l30.07-30.11a56 56 0 0 0 0-79.2m-77.26 133.82l-30.06 30.06a40 40 0 1 1-56.56-56.57l30.05-30.05a8 8 0 0 0-11.32-11.32L40.4 136.4a56 56 0 0 0 79.2 79.2l30.06-30.07a8 8 0 0 0-11.32-11.31'/%3E%3C/svg%3E");
+}
+
+/* Icon */
+em.icon {
+  line-height: 100%;
+}
