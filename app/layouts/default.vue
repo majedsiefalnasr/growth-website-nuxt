@@ -49,14 +49,14 @@ watchEffect(() => {
   <div>
     <div class="content">
       <div class="container">
-        <Navbar />
+        <CommonNavbar />
         <slot />
-        <FooterCTA />
+        <CommonFooterCTA />
       </div>
     </div>
 
-    <Footer />
-    <FloatingActions />
+    <CommonFooter />
+    <CommonFloatingActions />
   </div>
 </template>
 

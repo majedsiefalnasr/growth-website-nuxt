@@ -2,16 +2,16 @@
 
 <template>
   <div>
-    <PageLoader />
-    <Hero />
-    <Testimonials />
-    <MobileApp />
-    <SellingOnline />
-    <DistinguishBrand />
-    <Showcase />
-    <AddOns />
-    <Partners />
-    <Blog />
-    <FAQ />
+    <CommonPageLoader />
+    <HomeHero />
+    <CommonTestimonials />
+    <CommonMobileApp />
+    <HomeSellingOnline />
+    <HomeDistinguishBrand />
+    <HomeShowcase />
+    <HomeAddOns />
+    <CommonPartners />
+    <HomeBlog />
+    <CommonFAQ />
   </div>
 </template>

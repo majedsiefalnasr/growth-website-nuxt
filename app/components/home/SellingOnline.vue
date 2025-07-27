@@ -2,8 +2,8 @@
 
 <template>
   <div
-    class="showcase-block"
-    data-section="showcase"
+    class="selling-online-block"
+    data-section="selling-online"
     data-scrolled-into-view="false"
     data-scrolled-past-view="false"
   >
@@ -17,7 +17,8 @@
           data-scrolled-into-view="false"
           data-scrolled-past-view="false"
         >
-          <span>متاجر حققت النجاح مع Growth</span>
+          <span> البيع عبر الإنترنت لم يكن </span>
+          <span> أسهل من أي وقت مضى </span>
         </h2>
 
         <!-- Subtitle -->
@@ -28,53 +29,80 @@
           data-scrolled-into-view="false"
           data-scrolled-past-view="false"
         >
-          ﻟﻘﺪ ﻋﻤﻠﻨﺎ ﻣﻊ اﻟﻜﺜﻴﺮ ﻣﻦ اﻟﺸﺮﻛﺎت و اﻟﺄﻓﺮاد ﻟﺒﻨﺎء ﻣﺘﺎﺟﺮﻫﻢ، ﻣﺎ ﺳﺎﻋﺪﻫﻢ ﻓﻲ ﺗﺤﻘﻴﻖ ﻧﺠﺎﺣﺎت ﺑﺎﻫﺮة
+          أنشئ متجرك في دقائق واجعل علامتك التجارية تنبض بالحياة
         </div>
       </div>
 
-      <!-- Stores list -->
+      <!-- Futures list -->
       <div class="col-12">
-        <!-- Showcase Slider -->
-        <ShowcaseSlider />
+        <!-- Futures Slider -->
+        <HomeSellingOnlineSlider />
+      </div>
+    </div>
+
+    <!-- Background -->
+    <div class="background">
+      <div class="bg-dotted">
+        <img src="/assets/images/bg-dots.png" alt="background element" />
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.showcase-block {
+.selling-online-block {
   position: relative;
   z-index: 0;
   margin-bottom: 8.75rem;
 }
-.showcase-block > *:not(.background) {
+.selling-online-block > *:not(.background) {
   z-index: 1;
 }
-.showcase-block .header {
+.selling-online-block > .background > * {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  pointer-events: none;
+  text-align: center;
+}
+.selling-online-block > .background > .bg-dotted {
+  right: -100px;
+  bottom: -100px;
+  transform: translateY(0px);
+  -webkit-animation: floatY_dotted 6s ease-in-out infinite;
+  animation: floatY_dotted 6s ease-in-out infinite;
+}
+.selling-online-block > .background > .bg-dotted > * {
+  transform: scale(0.8);
+}
+.selling-online-block .header {
   margin-bottom: 5rem;
 }
-.showcase-block .header h2 {
+.selling-online-block .header h2 {
   margin-bottom: 1.25rem;
   color: var(--brand-500);
   font-weight: 700;
   font-size: 2rem;
 }
-.showcase-block .header .subtitle {
+.selling-online-block .header .subtitle {
   font-size: 1.25rem;
 }
 
 /* Responsiveness */
-/****************** */
+/********************* */
 /* X-Small devices (portrait phones, less than 576px) */
 /* No media query for `xs` since this is the default in Bootstrap */
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-  .showcase-block .header h2 {
+  .selling-online-block .header h2 {
     font-size: 2.5rem;
   }
-  .showcase-block .header .subtitle {
+  .selling-online-block .header .subtitle {
     font-size: 1.5rem;
+  }
+  .selling-online-block > .background > .bg-dotted > * {
+    transform: scale(1);
   }
 }
 
@@ -84,13 +112,13 @@
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  .showcase-block {
+  .selling-online-block {
     margin-bottom: 12.5rem;
   }
-  .showcase-block .header {
+  .selling-online-block .header {
     margin-bottom: 7.5rem;
   }
-  .showcase-block .header h2 {
+  .selling-online-block .header h2 {
     font-size: 3rem;
   }
 }

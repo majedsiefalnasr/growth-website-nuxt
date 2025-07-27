@@ -2,10 +2,10 @@
 
 <template>
   <div>
-    <HeroPrice />
-    <Testimonials />
-    <MobileApp />
-    <Partners />
-    <FAQ />
+    <PriceHero />
+    <CommonTestimonials />
+    <CommonMobileApp />
+    <CommonPartners />
+    <CommonFAQ />
   </div>
 </template>

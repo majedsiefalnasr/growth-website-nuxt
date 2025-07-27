@@ -2,14 +2,14 @@
 
 <template>
   <div
-    class="selling-online-block"
-    data-section="selling-online"
+    class="blog-block"
+    data-section="blog"
     data-scrolled-into-view="false"
     data-scrolled-past-view="false"
   >
-    <div class="row">
+    <div class="row justify-content-center">
       <!-- Header -->
-      <div class="header col-12 col-lg-8">
+      <div class="header col-12 col-lg-8 text-center">
         <!-- Title -->
         <h2
           data-cursor-magnify-inner
@@ -17,8 +17,7 @@
           data-scrolled-into-view="false"
           data-scrolled-past-view="false"
         >
-          <span> البيع عبر الإنترنت لم يكن </span>
-          <span> أسهل من أي وقت مضى </span>
+          <span> كل ما تريد الوصول إليه.. وأكثر </span>
         </h2>
 
         <!-- Subtitle -->
@@ -29,80 +28,67 @@
           data-scrolled-into-view="false"
           data-scrolled-past-view="false"
         >
-          أنشئ متجرك في دقائق واجعل علامتك التجارية تنبض بالحياة
+          ندعمك في تطوير قدراتك.. اجعل نشاطك في مستوى أفضل دومًا
         </div>
       </div>
 
-      <!-- Futures list -->
+      <!-- Blog slider -->
       <div class="col-12">
-        <!-- Futures Slider -->
-        <SellingOnlineSlider />
+        <!-- Blog Slider -->
+        <BlogHeroSlider />
       </div>
-    </div>
 
-    <!-- Background -->
-    <div class="background">
-      <div class="bg-dotted">
-        <img src="/assets/images/bg-dots.png" alt="background element" />
+      <!-- Footer -->
+      <div
+        class="footer col-12 col-lg-8 text-center mt-5"
+        data-reveal-self="translate-up"
+        data-reveal-delay="4"
+        data-scrolled-into-view="false"
+        data-scrolled-past-view="false"
+      >
+        <!-- Action -->
+        <NuxtLink to="/blog" class="btn btn-secondary btn-stretch mt-4" data-cursor-stick>
+          عرض المزيد
+        </NuxtLink>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.selling-online-block {
+.blog-block {
   position: relative;
   z-index: 0;
   margin-bottom: 8.75rem;
 }
-.selling-online-block > *:not(.background) {
+.blog-block > *:not(.background) {
   z-index: 1;
 }
-.selling-online-block > .background > * {
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  pointer-events: none;
-  text-align: center;
-}
-.selling-online-block > .background > .bg-dotted {
-  right: -100px;
-  bottom: -100px;
-  transform: translateY(0px);
-  -webkit-animation: floatY_dotted 6s ease-in-out infinite;
-  animation: floatY_dotted 6s ease-in-out infinite;
-}
-.selling-online-block > .background > .bg-dotted > * {
-  transform: scale(0.8);
-}
-.selling-online-block .header {
-  margin-bottom: 5rem;
-}
-.selling-online-block .header h2 {
+.blog-block .header h2 {
   margin-bottom: 1.25rem;
   color: var(--brand-500);
   font-weight: 700;
   font-size: 2rem;
 }
-.selling-online-block .header .subtitle {
+.blog-block .header .subtitle {
   font-size: 1.25rem;
+}
+.blog--hero-list .content > .item > .content .header {
+  margin-bottom: 0 !important;
 }
 
 /* Responsiveness */
-/********************* */
+/******************* */
 /* X-Small devices (portrait phones, less than 576px) */
 /* No media query for `xs` since this is the default in Bootstrap */
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-  .selling-online-block .header h2 {
+  .blog-block .header h2 {
     font-size: 2.5rem;
   }
-  .selling-online-block .header .subtitle {
+  .blog-block .header .subtitle {
     font-size: 1.5rem;
-  }
-  .selling-online-block > .background > .bg-dotted > * {
-    transform: scale(1);
   }
 }
 
@@ -112,13 +98,13 @@
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  .selling-online-block {
+  .blog-block {
     margin-bottom: 12.5rem;
   }
-  .selling-online-block .header {
+  .blog-block .header {
     margin-bottom: 7.5rem;
   }
-  .selling-online-block .header h2 {
+  .blog-block .header h2 {
     font-size: 3rem;
   }
 }

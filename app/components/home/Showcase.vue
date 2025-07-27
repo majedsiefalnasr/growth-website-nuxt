@@ -2,14 +2,14 @@
 
 <template>
   <div
-    class="blog-block"
-    data-section="blog"
+    class="showcase-block"
+    data-section="showcase"
     data-scrolled-into-view="false"
     data-scrolled-past-view="false"
   >
-    <div class="row justify-content-center">
+    <div class="row">
       <!-- Header -->
-      <div class="header col-12 col-lg-8 text-center">
+      <div class="header col-12 col-lg-8">
         <!-- Title -->
         <h2
           data-cursor-magnify-inner
@@ -17,7 +17,7 @@
           data-scrolled-into-view="false"
           data-scrolled-past-view="false"
         >
-          <span> كل ما تريد الوصول إليه.. وأكثر </span>
+          <span>متاجر حققت النجاح مع Growth</span>
         </h2>
 
         <!-- Subtitle -->
@@ -28,66 +28,52 @@
           data-scrolled-into-view="false"
           data-scrolled-past-view="false"
         >
-          ندعمك في تطوير قدراتك.. اجعل نشاطك في مستوى أفضل دومًا
+          ﻟﻘﺪ ﻋﻤﻠﻨﺎ ﻣﻊ اﻟﻜﺜﻴﺮ ﻣﻦ اﻟﺸﺮﻛﺎت و اﻟﺄﻓﺮاد ﻟﺒﻨﺎء ﻣﺘﺎﺟﺮﻫﻢ، ﻣﺎ ﺳﺎﻋﺪﻫﻢ ﻓﻲ ﺗﺤﻘﻴﻖ ﻧﺠﺎﺣﺎت ﺑﺎﻫﺮة
         </div>
       </div>
 
-      <!-- Blog slider -->
+      <!-- Stores list -->
       <div class="col-12">
-        <!-- Blog Slider -->
-        <BlogSlider />
-      </div>
-
-      <!-- Footer -->
-      <div
-        class="footer col-12 col-lg-8 text-center mt-5"
-        data-reveal-self="translate-up"
-        data-reveal-delay="4"
-        data-scrolled-into-view="false"
-        data-scrolled-past-view="false"
-      >
-        <!-- Action -->
-        <NuxtLink to="/blog" class="btn btn-secondary btn-stretch mt-4" data-cursor-stick>
-          عرض المزيد
-        </NuxtLink>
+        <!-- Showcase Slider -->
+        <HomeShowcaseSlider />
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.blog-block {
+.showcase-block {
   position: relative;
   z-index: 0;
   margin-bottom: 8.75rem;
 }
-.blog-block > *:not(.background) {
+.showcase-block > *:not(.background) {
   z-index: 1;
 }
-.blog-block .header h2 {
+.showcase-block .header {
+  margin-bottom: 5rem;
+}
+.showcase-block .header h2 {
   margin-bottom: 1.25rem;
   color: var(--brand-500);
   font-weight: 700;
   font-size: 2rem;
 }
-.blog-block .header .subtitle {
+.showcase-block .header .subtitle {
   font-size: 1.25rem;
-}
-.blog--hero-list .content > .item > .content .header {
-  margin-bottom: 0 !important;
 }
 
 /* Responsiveness */
-/******************* */
+/****************** */
 /* X-Small devices (portrait phones, less than 576px) */
 /* No media query for `xs` since this is the default in Bootstrap */
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-  .blog-block .header h2 {
+  .showcase-block .header h2 {
     font-size: 2.5rem;
   }
-  .blog-block .header .subtitle {
+  .showcase-block .header .subtitle {
     font-size: 1.5rem;
   }
 }
@@ -98,13 +84,13 @@
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  .blog-block {
+  .showcase-block {
     margin-bottom: 12.5rem;
   }
-  .blog-block .header {
+  .showcase-block .header {
     margin-bottom: 7.5rem;
   }
-  .blog-block .header h2 {
+  .showcase-block .header h2 {
     font-size: 3rem;
   }
 }

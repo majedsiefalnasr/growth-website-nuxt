@@ -32,7 +32,7 @@
       </div>
 
       <!-- Testimonials Slider -->
-      <TestimonialsSlider />
+      <CommonTestimonialsSlider />
     </div>
   </div>
 </template>

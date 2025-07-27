@@ -2,8 +2,8 @@
 
 <template>
   <div>
-    <HeroHelpCenter />
-    <HeroHelpCenterTopics />
-    <HeroHelpCenterCommonTopics />
+    <HelpCenterHero />
+    <HelpCenterTopics />
+    <HelpCenterCommonTopics />
   </div>
 </template>

@@ -2,7 +2,7 @@
 
 <template>
   <div>
-    <HeroContact />
-    <MobileApp />
+    <ContactHero />
+    <CommonMobileApp />
   </div>
 </template>

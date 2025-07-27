@@ -75,12 +75,7 @@ export default defineNuxtConfig({
   },
 
   // === Components auto-import configuration ===
-  components: [
-    {
-      path: '~/components',
-      pathPrefix: false, // No path prefix for components
-    },
-  ],
+  components: ['~/components'],
 
   // === Nuxt Image module configuration ===
   image: {
