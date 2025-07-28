@@ -30,8 +30,16 @@ export const useSeoMetaI18n = () => {
     const routeName = route.name as string
     const routePrefix = overrides?.routePrefix || 'seo'
 
-    // Auto-generate translation keys based on route
-    const cleanRouteName = routeName.replace(/___\w+$/, '')
+    // Generate cleanRouteName as a nested, dot-separated path (e.g., blog.category.post)
+    // Reason: This matches the nested JSON structure for translations
+    let cleanRouteName = ''
+    if (typeof routeName === 'string') {
+      cleanRouteName = routeName
+        .replace(/___\w+$/, '')
+        .split('-')
+        .join('.')
+    }
+
     const autoTitleKey = `${routePrefix}.${cleanRouteName}.title`
     const autoDescKey = `${routePrefix}.${cleanRouteName}.description`
     const autoKeywordsKey = `${routePrefix}.${cleanRouteName}.keywords`
