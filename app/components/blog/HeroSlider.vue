@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { Blog } from '@/components/blog/blogs.slider.mock'
 import { Splide, SplideSlide } from '@splidejs/vue-splide'
 
 /**
@@ -28,112 +29,11 @@ function getCurrentLocaleDir(): 'ltr' | 'rtl' | 'auto' {
 const currentLocaleDir = getCurrentLocaleDir()
 
 /**
- * Blog item type.
- * @typedef {Object} Blog
- * @property {string} title - The blog title.
- * @property {string} subtitle - The blog subtitle.
- * @property {string} content - The blog content.
- * @property {string} image - The image source for the blog.
- * @property {string} date - The publication date for the blog.
- * @property {string} reading_time - The time it takes to read the blog.
- * @property {string} [url] -The URL for the blog post.
- * @property {Array<{ name: string; url: string }>} [categories] - The categories associated with the blog.
+ * Props for HeroSlider component.
+ * @typedef {Object} HeroSliderProps
+ * @property {Blog[]} blogs - Array of blog objects to display in the slider.
  */
-interface Blog {
-  title: string
-  subtitle?: string
-  content?: string
-  image?: string
-  date?: string
-  reading_time?: string
-  url?: string
-  categories?: { name: string; url: string }[]
-}
-
-/**
- * Returns the Blogs to display in the slider.
- * @returns {Blog[]} Array of blog objects.
- */
-const blogs: Blog[] = [
-  {
-    title: 'مرحبا بك في منصة حلول!',
-    subtitle:
-      'بدون خبرة تقنية وبكل سهولة يمكنك البيع في أي مكان وزمان بمتجر إلكتروني خاص بك وبهويتك التجارية',
-    content:
-      'إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد، النص لن يبدو مقسما ولا يحوي أخطاء لغوية، مولد النص العربى مفيد لمصممي المواقع على وجه الخصوص، حيث يحتاج العميل فى كثير من الأحيان أن يطلع على صورة حقيقية لتصميم الموقع.',
-    image: '/assets/images/blog/blog-ex1.png',
-    date: '2023-01-01',
-    reading_time: '5 دقائق',
-    url: './single-blog.html',
-    categories: [
-      {
-        name: 'تصنيف',
-        url: './category.html',
-      },
-      {
-        name: 'تصنيف آخر',
-        url: './category.html',
-      },
-    ],
-  },
-  {
-    title: 'أسم المدونة',
-    subtitle: 'عنوان فرعي',
-    content: 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من',
-    image: '/assets/images/blog/blog-ex2.png',
-    date: '2023-01-02',
-    reading_time: '4 دقائق',
-    url: './single-blog.html',
-    categories: [
-      {
-        name: 'تصنيف',
-        url: './category.html',
-      },
-      {
-        name: 'تصنيف آخر',
-        url: './category.html',
-      },
-    ],
-  },
-  {
-    title: 'أسم المدونة',
-    subtitle: 'عنوان فرعي',
-    content: 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من',
-    image: '/assets/images/blog/blog-ex3.png',
-    date: '2023-01-03',
-    reading_time: '6 دقائق',
-    url: './single-blog.html',
-    categories: [
-      {
-        name: 'تصنيف',
-        url: './category.html',
-      },
-      {
-        name: 'تصنيف آخر',
-        url: './category.html',
-      },
-    ],
-  },
-  {
-    title: 'أسم المدونة',
-    subtitle: 'عنوان فرعي',
-    content: 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من',
-    image: '/assets/images/blog/blog-ex4.png',
-    date: '2023-01-04',
-    reading_time: '3 دقائق',
-    url: './single-blog.html',
-    categories: [
-      {
-        name: 'تصنيف',
-        url: './category.html',
-      },
-      {
-        name: 'تصنيف آخر',
-        url: './category.html',
-      },
-    ],
-  },
-]
+defineProps<{ blogs: Blog[] }>()
 
 /**
  * Splide slider options for futures.
@@ -141,7 +41,8 @@ const blogs: Blog[] = [
  */
 const splideOptions: Record<string, unknown> = {
   perPage: 1,
-  autoplay: false,
+  autoplay: true,
+  type: 'loop',
   breakpoints: {
     767.98: {
       gap: 32,
@@ -182,7 +83,7 @@ const splideOptions: Record<string, unknown> = {
       <!-- Content -->
       <div class="content">
         <!-- Categories -->
-        <div class="categories">
+        <div v-if="blog.categories && blog.categories.length" class="categories">
           <NuxtLink
             v-for="(category, catIdx) in blog.categories"
             :key="catIdx"
@@ -214,7 +115,10 @@ const splideOptions: Record<string, unknown> = {
         </div>
 
         <!-- Info -->
-        <div class="info">{{ blog.date }} · {{ blog.reading_time }}</div>
+        <div class="info">
+          {{ blog.date }}
+          <span v-if="blog.reading_time"> · {{ blog.reading_time }}</span>
+        </div>
       </div>
     </SplideSlide>
   </Splide>
@@ -229,7 +133,7 @@ const splideOptions: Record<string, unknown> = {
   overflow: visible;
 }
 .blog-slider .splide__pagination {
-  bottom: -2.5rem;
+  bottom: -4rem;
 }
 .blog-slider .splide__pagination .splide__pagination__page {
   transition: all 0.6s ease-out;
@@ -327,6 +231,12 @@ const splideOptions: Record<string, unknown> = {
 }
 .blog-slider .splide__list .splide__slide .content .excerpt {
   display: none;
+  display: -webkit-box;
+  font-size: 1rem;
+  -webkit-line-clamp: 4; /* Limit to 4 lines */
+  line-clamp: 4; /* Limit to 4 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .blog-slider .splide__slide .content .author {
   display: flex;
