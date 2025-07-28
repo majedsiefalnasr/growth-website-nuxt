@@ -1,4 +1,6 @@
-<script lang="ts"></script>
+<script setup lang="ts">
+import { blogsMock } from '@/components/blog/blogs.slider.mock'
+</script>
 
 <template>
   <div
@@ -35,7 +37,7 @@
       <!-- Blog slider -->
       <div class="col-12">
         <!-- Blog Slider -->
-        <BlogHeroSlider />
+        <BlogHeroSlider :blogs="blogsMock" />
       </div>
 
       <!-- Footer -->
