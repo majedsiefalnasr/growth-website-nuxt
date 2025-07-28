@@ -33,12 +33,12 @@ export const useSeoMetaI18n = () => {
     // Generate cleanRouteName as a nested, dot-separated path (e.g., blog.category.post)
     // Reason: This matches the nested JSON structure for translations
     let cleanRouteName = ''
-    if (typeof routeName === 'string') {
-      cleanRouteName = routeName
-        .replace(/___\w+$/, '')
-        .split('-')
-        .join('.')
+    if (typeof route.path === 'string') {
+      const path = route.path.replace(/^\//, '').replace(/\/$/, '')
+      cleanRouteName = path === '' ? '' : path.split('/').join('.')
     }
+
+    cleanRouteName = !cleanRouteName || cleanRouteName === '' ? 'index' : cleanRouteName
 
     const autoTitleKey = `${routePrefix}.${cleanRouteName}.title`
     const autoDescKey = `${routePrefix}.${cleanRouteName}.description`
@@ -47,31 +47,36 @@ export const useSeoMetaI18n = () => {
 
     // Determine final values with override priority
     const finalTitle =
-      overrides?.title || (overrides?.titleKey ? t(overrides.titleKey) : t(autoTitleKey))
+      overrides?.title ||
+      (overrides?.titleKey && hasTranslation(overrides.titleKey)
+        ? t(overrides.titleKey)
+        : hasTranslation(autoTitleKey)
+          ? t(autoTitleKey)
+          : 'Website')
 
     const finalDescription =
       overrides?.description ||
-      (overrides?.descriptionKey
+      (overrides?.descriptionKey && hasTranslation(overrides.descriptionKey)
         ? t(overrides.descriptionKey)
         : hasTranslation(autoDescKey)
           ? t(autoDescKey)
-          : undefined)
+          : '')
 
     const finalKeywords =
       overrides?.keywords ||
-      (overrides?.keywordsKey
+      (overrides?.keywordsKey && hasTranslation(overrides.keywordsKey)
         ? t(overrides.keywordsKey)
         : hasTranslation(autoKeywordsKey)
           ? t(autoKeywordsKey)
-          : undefined)
+          : '')
 
     const finalOgImage =
       overrides?.ogImage ||
-      (overrides?.ogImageKey
+      (overrides?.ogImageKey && hasTranslation(overrides.ogImageKey)
         ? t(overrides.ogImageKey)
         : hasTranslation(autoOgImageKey)
           ? t(autoOgImageKey)
-          : undefined)
+          : '')
 
     // Generate alternate language links
     const alternateLinks = !overrides?.disableAlternateLinks
