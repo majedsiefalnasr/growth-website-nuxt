@@ -257,11 +257,7 @@ export default defineNuxtConfig({
     langDir: 'locales',
     strategy: 'prefix_except_default',
     vueI18n: 'i18n.config.ts',
-    detectBrowserLanguage: {
-      useCookie: true,
-      redirectOn: 'root', // or 'always' to always redirect
-      fallbackLocale: 'ar',
-    },
+    detectBrowserLanguage: false, // Disable automatic detection
   },
 
   // === Add more Nuxt 4 options here as needed ===
